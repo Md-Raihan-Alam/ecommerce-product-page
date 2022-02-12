@@ -424,7 +424,52 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
-.bg-red-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(127 29 29 / var(--tw-bg-opacity));
+.flex {
+  display: flex;
+}
+.h-16 {
+  height: 4rem;
+}
+.h-\[50px\] {
+  height: 50px;
+}
+.w-twenty {
+  width: 20%;
+}
+.w-fourty {
+  width: 40%;
+}
+.w-\[80px\] {
+  width: 80px;
+}
+.flex-1 {
+  flex: 1 1 0%;
+}
+.flex-initial {
+  flex: 0 1 auto;
+}
+.items-center {
+  align-items: center;
+}
+.justify-start {
+  justify-content: flex-start;
+}
+.justify-end {
+  justify-content: flex-end;
+}
+.justify-around {
+  justify-content: space-around;
+}
+.pl-5 {
+  padding-left: 1.25rem;
+}
+.pr-8 {
+  padding-right: 2rem;
+}
+.pr-4 {
+  padding-right: 1rem;
+}
+.text-dark-grayish-blue {
+  --tw-text-opacity: 1;
+  color: hsl(219 9% 45% / var(--tw-text-opacity));
 }
