@@ -424,6 +424,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-saturate:  ;
   --tw-backdrop-sepia:  ;
 }
+.ml-5 {
+  margin-left: 1.25rem;
+}
+.mr-4 {
+  margin-right: 1rem;
+}
 .flex {
   display: flex;
 }
@@ -436,17 +442,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-twenty {
   width: 20%;
 }
-.w-fourty {
-  width: 40%;
+.w-sixty {
+  width: 60%;
 }
 .w-\[80px\] {
   width: 80px;
+}
+.w-\[50px\] {
+  width: 50px;
 }
 .flex-1 {
   flex: 1 1 0%;
 }
 .flex-initial {
   flex: 0 1 auto;
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 .items-center {
   align-items: center;
@@ -460,6 +472,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-around {
   justify-content: space-around;
 }
+.rounded-full {
+  border-radius: 9999px;
+}
+.border-2 {
+  border-width: 2px;
+}
+.border-orange {
+  --tw-border-opacity: 1;
+  border-color: hsl(26 100% 55% / var(--tw-border-opacity));
+}
 .pl-5 {
   padding-left: 1.25rem;
 }
@@ -472,4 +494,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-dark-grayish-blue {
   --tw-text-opacity: 1;
   color: hsl(219 9% 45% / var(--tw-text-opacity));
+}
+.hover\:border-2:hover {
+  border-width: 2px;
+}
+.hover\:border-orange:hover {
+  --tw-border-opacity: 1;
+  border-color: hsl(26 100% 55% / var(--tw-border-opacity));
 }

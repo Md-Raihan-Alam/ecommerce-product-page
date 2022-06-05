@@ -18,7 +18,10 @@ module.exports = {
       },
       spacing:{
         twenty:"20%",
-        fourty:"40%",
+        sixty:"60%",
+      },
+      borderColor:{
+        'orange':"hsl(26, 100%, 55%)",
       }
     },
   },
