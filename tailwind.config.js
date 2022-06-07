@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens:{
+        "tablet":"600px",
+      },
       colors:{
         'guide-orange':"hsl(26, 100%, 55%)",
         'guide-pale-orange':"hsl(25, 100%, 94%)",
@@ -19,6 +22,7 @@ module.exports = {
       spacing:{
         twenty:"20%",
         sixty:"60%",
+        fullView:"100vh",
       },
       borderColor:{
         'orange':"hsl(26, 100%, 55%)",
