@@ -26,6 +26,7 @@ module.exports = {
       },
       borderColor:{
         'orange':"hsl(26, 100%, 55%)",
+        'dark-grayish-blue':"hsl(219, 9%, 45%)",
       }
     },
   },
