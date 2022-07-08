@@ -3,7 +3,8 @@ let barMenu = document.querySelector('#barMenu');
 let closeMenu = document.querySelector("#closeMenu");
 let asideMenu = document.querySelector("#asideMenu");
 let optionText = document.querySelectorAll('#optionSpan');
-// let optionParent:NodeListOf<Element>=document.querySelectorAll('#optionsDiv');
+let shopIcon = document.querySelector("#shopIcon");
+let shopCart = document.querySelector('#shoppingCart');
 barMenu.addEventListener("click", () => {
     asideMenu.classList.remove("-translate-x-full");
 });
@@ -17,4 +18,7 @@ optionText.forEach((e) => {
     e.addEventListener('mouseout', () => {
         e.parentElement.classList.remove('hover:border-orange');
     });
+});
+shopIcon.addEventListener('click', () => {
+    shopCart.classList.toggle('hidden');
 });

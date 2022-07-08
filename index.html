@@ -25,7 +25,11 @@
   <div class="flex-initial w-twenty h-16 flex justify-end items-center">
     <div class="relative">
       <div class="absolute bottom-3 text-center text-white text-9px left-2 w-5 h-3 rounded-md bg-orange">3</div>
-      <img src="images/icon-cart.svg" class="mr-8 cursor-pointer" alt="Shopping-Cart"/>
+      <div  id="shoppingCart" class="absolute top-14 -right-14 w-80 shadow-xl hidden rounded-md bg-white">
+        <div class="w-full h-14 pl-3 flex justify-start items-center font-bold border-gray-400 border-b-1">Cart</div>
+        <div class="w-full h-36 flex justify-center items-center text-dark-grayish-blue">Your cart is empty</div>
+      </div>
+      <img src="images/icon-cart.svg" id="shopIcon" class="mr-8 cursor-pointer" alt="Shopping-Cart"/>
     </div>
     <img src="images/image-avatar.png" class="hover:border-orange rounded-full border-2 mr-4 w-[50px] h-[50px] cursor-pointer " alt="Avatar"/>
   </div>
