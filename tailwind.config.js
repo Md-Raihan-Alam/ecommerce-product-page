@@ -27,6 +27,15 @@ module.exports = {
       borderColor:{
         'orange':"hsl(26, 100%, 55%)",
         'dark-grayish-blue':"hsl(219, 9%, 45%)",
+      },
+      backgroundColor:{
+        'orange':"hsl(26, 100%, 55%)",
+      },
+      borderWidth:{
+        '1':'1px',
+      },
+      fontSize:{
+        '9px':'9px',
       }
     },
   },

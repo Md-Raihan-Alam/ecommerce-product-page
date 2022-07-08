@@ -12,18 +12,21 @@
   <link rel="stylesheet" media="all" href="output/style.css"/>
 </head>
 <body>
-<header class="flex justify-center items-center border-b-dark-grayish-blue border-b-2">
+<header class="flex justify-center items-center border-b-dark-grayish-blue border-b-1 h-28">
   <svg width="16" height="15" class="ml-2 cursor-pointer tablet:hidden" id="barMenu" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd"/></svg>
   <div class="flex-1 w-twenty h-16 flex justify-start items-center"><img src="images/logo.svg" class="pl-5" alt="Sneakers"/></div>
-  <div class="flex-initial w-sixty h-16 hidden tablet:flex justify-around items-center ml-5">
-    <div class="text-dark-grayish-blue hover:cursor-pointer hover:text-black">Collections</div>
-    <div class="text-dark-grayish-blue hover:cursor-pointer hover:text-black">Men</div>
-    <div class="text-dark-grayish-blue hover:cursor-pointer hover:text-black">Women</div>
-    <div class="text-dark-grayish-blue hover:cursor-pointer hover:text-black">About</div>
-    <div class="text-dark-grayish-blue hover:cursor-pointer hover:text-black">Contact</div>
+  <div class="flex-initial w-sixty h-full hidden tablet:flex justify-around items-center ml-5">
+    <div id="optionsDiv" class="text-dark-grayish-blue h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">Collections</span></div>
+    <div id="optionsDiv" class="text-dark-grayish-blue h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">Men</span></div>
+    <div id="optionsDiv" class="text-dark-grayish-blue h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">Women</span></div>
+    <div id="optionsDiv" class="text-dark-grayish-blue h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">About</span></div>
+    <div id="optionsDiv" class="text-dark-grayish-blue h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">Contact</span></div>
   </div>
   <div class="flex-initial w-twenty h-16 flex justify-end items-center">
-    <img src="images/icon-cart.svg" class="mr-8 cursor-pointer" alt="Shopping-Cart"/>
+    <div class="relative">
+      <div class="absolute bottom-3 text-center text-white text-9px left-2 w-5 h-3 rounded-md bg-orange">3</div>
+      <img src="images/icon-cart.svg" class="mr-8 cursor-pointer" alt="Shopping-Cart"/>
+    </div>
     <img src="images/image-avatar.png" class="hover:border-orange rounded-full border-2 mr-4 w-[50px] h-[50px] cursor-pointer " alt="Avatar"/>
   </div>
 </header>
