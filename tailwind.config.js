@@ -17,7 +17,8 @@ module.exports = {
         'grayish-blue':"hsl(220, 14%, 75%)",
         'light-grayish-blue':'hsl(223, 64%, 98%)',
         'white':"hsl(0, 0%, 100%)",
-        'black':"hsl(0, 0%, 0%)"
+        'black':"hsl(0, 0%, 0%)",
+        'halfBlack':'rgba(0, 0, 0, 0.7)',
       },
       spacing:{
         twenty:"20%",

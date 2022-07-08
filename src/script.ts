@@ -1,13 +1,16 @@
 let barMenu=document.querySelector('#barMenu') as HTMLOrSVGScriptElement;
 let closeMenu=document.querySelector("#closeMenu") as HTMLOrSVGScriptElement;
 let asideMenu=document.querySelector("#asideMenu") as HTMLElement;
+let transparentBlack=document.querySelector("#transparentBlack") as HTMLDivElement;
 let optionText:NodeListOf<Element>=document.querySelectorAll('#optionSpan');
 let shopIcon=document.querySelector("#shopIcon") as HTMLImageElement;
 let shopCart=document.querySelector('#shoppingCart') as HTMLDivElement;
 barMenu.addEventListener("click",()=>{
+    transparentBlack.classList.remove('hidden');
     asideMenu.classList.remove("-translate-x-full");
 });
 closeMenu.addEventListener("click",()=>{
+    transparentBlack.classList.add('hidden');
     asideMenu.classList.add("-translate-x-full");
 });
 optionText.forEach((e)=>{
