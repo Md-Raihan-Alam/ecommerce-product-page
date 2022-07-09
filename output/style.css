@@ -484,6 +484,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mb-2 {
   margin-bottom: 0.5rem;
 }
+.mt-12 {
+  margin-top: 3rem;
+}
 .flex {
   display: flex;
 }
@@ -514,6 +517,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-fullView {
   height: 100vh;
 }
+.h-fourH {
+  height: 400px;
+}
 .w-twenty {
   width: 20%;
 }
@@ -532,11 +538,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[50px\] {
   width: 50px;
 }
-.w-fullView {
-  width: 100vh;
-}
 .w-4\/5 {
   width: 80%;
+}
+.w-1\/2 {
+  width: 50%;
+}
+.w-thumbnail {
+  width: 20%;
 }
 .flex-1 {
   flex: 1 1 0%;
@@ -569,6 +578,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-center {
   justify-content: center;
 }
+.justify-between {
+  justify-content: space-between;
+}
 .justify-around {
   justify-content: space-around;
 }
@@ -578,8 +590,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded-full {
   border-radius: 9999px;
 }
+.rounded-xl {
+  border-radius: 0.75rem;
+}
 .border-2 {
   border-width: 2px;
+}
+.border-4 {
+  border-width: 4px;
 }
 .border-b-4 {
   border-bottom-width: 4px;
@@ -593,6 +611,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-gray-400 {
   --tw-border-opacity: 1;
   border-color: rgb(156 163 175 / var(--tw-border-opacity));
+}
+.border-orange {
+  --tw-border-opacity: 1;
+  border-color: hsl(26 100% 55% / var(--tw-border-opacity));
 }
 .border-b-dark-grayish-blue {
   --tw-border-opacity: 1;
@@ -639,10 +661,19 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: hsl(0 0% 0% / var(--tw-text-opacity));
 }
+.opacity-50 {
+  opacity: 0.5;
+}
 .shadow-xl {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.outline-4 {
+  outline-width: 4px;
+}
+.outline-orange {
+  outline-color: hsl(26, 100%, 55%);
 }
 .transition-transform {
   transition-property: transform;
@@ -659,6 +690,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:text-black:hover {
   --tw-text-opacity: 1;
   color: hsl(0 0% 0% / var(--tw-text-opacity));
+}
+.hover\:opacity-50:hover {
+  opacity: 0.5;
 }
 @media (min-width: 600px) {
 

@@ -34,6 +34,7 @@
     <img src="images/image-avatar.png" class="hover:border-orange rounded-full border-2 mr-4 w-[50px] h-[50px] cursor-pointer " alt="Avatar"/>
   </div>
 </header>
+<!--background tranparency-->
 <div id="transparentBlack" class="z-20 w-full h-fullView hidden bg-halfBlack absolute top-0 left-0 bottom-0 right-0"></div>
 <aside class="absolute z-30 left-0 right-0 top-0 bottom-0 h-fullView bg-white w-4/5 -translate-x-full transition-transform" id="asideMenu">
   <div class="h-16 flex justify-start items-center">
@@ -47,6 +48,31 @@
     <div class="text-black mb-2 font-black ml-6 hover:cursor-pointer">Contact</div>
   </div>
 </aside>
+  <div class="flex mt-12">
+    <div class="w-1/2 flex flex-col justify-center items-center">
+      <div class="w-full flex justify-center">
+        <img class="w-1/2 h-fourH rounded-xl" id="mainImg" src="images/image-product-1.jpg"/>
+      </div>
+      <div class="w-full mt-6 flex justify-center">
+        <div class="flex justify-between items-center w-1/2">
+          <!--outline and border-->
+          <div class="w-thumbnail h-full border-orange border-4 rounded-xl">
+            <img id="thumbnailImg1" class="thumb hover:opacity-50 w-full h-full cursor-pointer opacity-50" src="images/image-product-1-thumbnail.jpg"/>
+          </div>
+          <div class="w-thumbnail h-full">
+            <img id="thumbnailImg2" class="thumb hover:opacity-50 w-full h-full rounded-xl cursor-pointer" src="images/image-product-2-thumbnail.jpg"/>
+          </div>
+          <div class="w-thumbnail h-full">
+            <img id="thumbnailImg3" class="thumb hover:opacity-50 w-full h-full rounded-xl cursor-pointer" src="images/image-product-3-thumbnail.jpg"/>
+          </div>
+          <div class="w-thumbnail h-full">
+            <img id="thumbnailImg4" class="thumb hover:opacity-50 w-full h-full rounded-xl cursor-pointer" src="images/image-product-4-thumbnail.jpg"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="w-1/2"></div>
+  </div>
 </body>
 <script src="./output/script.js"></script>
 </html>

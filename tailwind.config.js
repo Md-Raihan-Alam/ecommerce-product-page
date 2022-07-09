@@ -24,10 +24,17 @@ module.exports = {
         twenty:"20%",
         sixty:"60%",
         fullView:"100vh",
+        fourH:"400px",
+        ninety:"90%",
+        thumbnailWidth:"50%",
+        thumbnail:"20%",
       },
       borderColor:{
         'orange':"hsl(26, 100%, 55%)",
         'dark-grayish-blue':"hsl(219, 9%, 45%)",
+      },
+      outlineColor:{
+        'orange':"hsl(26, 100%, 55%)",
       },
       backgroundColor:{
         'orange':"hsl(26, 100%, 55%)",
