@@ -44,7 +44,15 @@ module.exports = {
       },
       fontSize:{
         '9px':'9px',
-      }
+      },
+      margin:{
+        'res':'5%',
+        'big':'15%',
+      },
+      fontSize:{
+        'small':'14px',
+        'normal':'17px',
+      },
     },
   },
   plugins: [],
