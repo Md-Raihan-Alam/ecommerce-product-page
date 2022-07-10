@@ -520,6 +520,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-fourH {
   height: 400px;
 }
+.h-20 {
+  height: 5rem;
+}
+.h-32 {
+  height: 8rem;
+}
+.h-48 {
+  height: 12rem;
+}
 .w-twenty {
   width: 20%;
 }
@@ -547,6 +556,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-thumbnail {
   width: 20%;
 }
+.w-ninety {
+  width: 90%;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -565,6 +577,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .items-start {
   align-items: flex-start;
+}
+.items-end {
+  align-items: flex-end;
 }
 .items-center {
   align-items: center;
@@ -640,8 +655,31 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-center {
   text-align: center;
 }
+.text-justify {
+  text-align: justify;
+}
 .text-9px {
   font-size: 9px;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 .font-bold {
   font-weight: 700;
@@ -661,6 +699,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: hsl(0 0% 0% / var(--tw-text-opacity));
 }
+.text-guide-pale-orange {
+  --tw-text-opacity: 1;
+  color: hsl(25 100% 94% / var(--tw-text-opacity));
+}
+.text-guide-orange {
+  --tw-text-opacity: 1;
+  color: hsl(26 100% 55% / var(--tw-text-opacity));
+}
 .opacity-50 {
   opacity: 0.5;
 }
@@ -668,12 +714,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-}
-.outline-4 {
-  outline-width: 4px;
-}
-.outline-orange {
-  outline-color: hsl(26, 100%, 55%);
 }
 .transition-transform {
   transition-property: transform;
