@@ -478,9 +478,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-5 {
   margin-left: 1.25rem;
 }
-.mt-3 {
-  margin-top: 0.75rem;
-}
 .mr-8 {
   margin-right: 2rem;
 }
@@ -511,6 +508,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .ml-7 {
   margin-left: 1.75rem;
 }
+.mt-3 {
+  margin-top: 0.75rem;
+}
 .flex {
   display: flex;
 }
@@ -535,12 +535,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-36 {
   height: 9rem;
 }
-.h-12 {
-  height: 3rem;
-}
-.h-2\/5 {
-  height: 40%;
-}
 .h-\[50px\] {
   height: 50px;
 }
@@ -562,6 +556,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-11 {
   height: 2.75rem;
 }
+.h-12 {
+  height: 3rem;
+}
+.h-2\/5 {
+  height: 40%;
+}
+.h-thumbailHeight {
+  height: 70px;
+}
 .w-twenty {
   width: 20%;
 }
@@ -577,12 +580,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-full {
   width: 100%;
 }
-.w-12 {
-  width: 3rem;
-}
-.w-ninety {
-  width: 90%;
-}
 .w-\[50px\] {
   width: 50px;
 }
@@ -595,6 +592,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-thumbnail {
   width: 20%;
 }
+.w-ninety {
+  width: 90%;
+}
 .w-10 {
   width: 2.5rem;
 }
@@ -603,6 +603,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-64 {
   width: 16rem;
+}
+.w-12 {
+  width: 3rem;
 }
 .w-fitBorder {
   width: 85%;
@@ -664,6 +667,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-4 {
   border-width: 4px;
+}
+.border-1 {
+  border-width: 1px;
 }
 .border-b-4 {
   border-bottom-width: 4px;

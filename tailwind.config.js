@@ -29,6 +29,7 @@ module.exports = {
         thumbnailWidth:"50%",
         thumbnail:"20%",
         fitBorder:"85%",
+        thumbailHeight:"70px",
       },
       borderColor:{
         'orange':"hsl(26, 100%, 55%)",

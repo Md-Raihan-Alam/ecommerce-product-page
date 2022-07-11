@@ -15,31 +15,19 @@
 <header class="flex z-10 justify-center items-center border-b-dark-grayish-blue tablet:border-b-1 h-28">
   <svg width="16" height="15" class="ml-2 cursor-pointer tablet:hidden" id="barMenu" xmlns="http://www.w3.org/2000/svg"><path d="M16 12v3H0v-3h16Zm0-6v3H0V6h16Zm0-6v3H0V0h16Z" fill="#69707D" fill-rule="evenodd"/></svg>
   <div class="flex-1 w-twenty h-16 flex justify-start items-center"><img src="images/logo.svg" class="pl-5" alt="Sneakers"/></div>
-  <div class="flex-initial w-sixty h-full hidden tablet:flex justify-around items-center ml-5">
+  <div class="flex-initial w-sixty h-full hidden tablet:flex justify-start items-center ml-5">
     <div id="optionsDiv" class="text-dark-grayish-blue h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">Collections</span></div>
-    <div id="optionsDiv" class="text-dark-grayish-blue h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">Men</span></div>
-    <div id="optionsDiv" class="text-dark-grayish-blue h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">Women</span></div>
-    <div id="optionsDiv" class="text-dark-grayish-blue h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">About</span></div>
-    <div id="optionsDiv" class="text-dark-grayish-blue h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">Contact</span></div>
+    <div id="optionsDiv" class="text-dark-grayish-blue ml-5 h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">Men</span></div>
+    <div id="optionsDiv" class="text-dark-grayish-blue ml-5 h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">Women</span></div>
+    <div id="optionsDiv" class="text-dark-grayish-blue ml-5 h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">About</span></div>
+    <div id="optionsDiv" class="text-dark-grayish-blue ml-5 h-full flex justify-center items-center border-b-4 border-transparent "><span id="optionSpan" class="hover:cursor-pointer hover:text-black">Contact</span></div>
   </div>
   <div class="flex-initial w-twenty h-16 flex justify-end items-center">
     <div class="relative">
       <div id="cardAmount" class="absolute bottom-3 text-center text-white text-9px left-2 w-5 h-3 rounded-md bg-orange">0</div>
       <div  id="shoppingCart" class="absolute hidden top-14 tablet:-right-14 -right-14 w-80 shadow-xl  rounded-md bg-white">
         <div class="w-full h-14 pl-3 flex justify-start items-center font-bold border-gray-400 border-b-1">Cart</div>
-        <div class="w-full h-36 flex flex-col justify-center items-center text-dark-grayish-blue">
-          <div class="flex justify-around items-center">
-            <img class="w-12 h-12 rounded-md ml-2" src="images/image-product-1-thumbnail.jpg"/>
-            <div class="ml-2 flex flex-col justify-center items-start">
-              <div>Fall Limited Edition Sneakers</div>
-              <div>$125.00 x <span>3</span><span class="ml-2 font-bold text-black">$375.00</span></div>
-            </div>
-            <div class="ml-2"><svg class="cursor-pointer" width="14" height="16" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M0 2.625V1.75C0 1.334.334 1 .75 1h3.5l.294-.584A.741.741 0 0 1 5.213 0h3.571a.75.75 0 0 1 .672.416L9.75 1h3.5c.416 0 .75.334.75.75v.875a.376.376 0 0 1-.375.375H.375A.376.376 0 0 1 0 2.625Zm13 1.75V14.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 1 14.5V4.375C1 4.169 1.169 4 1.375 4h11.25c.206 0 .375.169.375.375ZM4.5 6.5c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Zm3 0c0-.275-.225-.5-.5-.5s-.5.225-.5.5v7c0 .275.225.5.5.5s.5-.225.5-.5v-7Z" id="a"/></defs><use fill="#C3CAD9" fill-rule="nonzero" xlink:href="#a"/></svg></div>
-          </div>
-          <div class="mt-3 w-fitBorder rounded-md flex justify-center items-center cursor-pointer font-bold h-2/5 bg-orange text-white">
-            Checkout
-          </div>
-          <!-- Your cart is empty -->
+        <div id="cartMenu" class="w-full h-36 flex flex-col justify-center items-center text-dark-grayish-blue">
         </div>
       </div>
       <img src="images/icon-cart.svg" id="shopIcon" class="mr-8 cursor-pointer" alt="Shopping-Cart"/>
@@ -70,16 +58,16 @@
         <div class="flex justify-between items-center w-1/2">
           <!--outline and border-->
           <div class="w-thumbnail h-full border-orange border-4 rounded-xl">
-            <img id="thumbnailImg1" class="thumb hover:opacity-50 w-full h-full cursor-pointer opacity-50" src="images/image-product-1-thumbnail.jpg"/>
+            <img id="thumbnailImg1" class="thumb hover:opacity-50 w-full h-thumbailHeight cursor-pointer opacity-50" src="images/image-product-1-thumbnail.jpg"/>
           </div>
           <div class="w-thumbnail h-full">
-            <img id="thumbnailImg2" class="thumb hover:opacity-50 w-full h-full rounded-xl cursor-pointer" src="images/image-product-2-thumbnail.jpg"/>
+            <img id="thumbnailImg2" class="thumb  hover:opacity-50 w-full h-thumbailHeight rounded-xl cursor-pointer" src="images/image-product-2-thumbnail.jpg"/>
           </div>
           <div class="w-thumbnail h-full">
-            <img id="thumbnailImg3" class="thumb hover:opacity-50 w-full h-full rounded-xl cursor-pointer" src="images/image-product-3-thumbnail.jpg"/>
+            <img id="thumbnailImg3" class="thumb  hover:opacity-50 w-full h-thumbailHeight rounded-xl cursor-pointer" src="images/image-product-3-thumbnail.jpg"/>
           </div>
           <div class="w-thumbnail h-full">
-            <img id="thumbnailImg4" class="thumb hover:opacity-50 w-full h-full rounded-xl cursor-pointer" src="images/image-product-4-thumbnail.jpg"/>
+            <img id="thumbnailImg4" class="thumb  hover:opacity-50 w-full h-thumbailHeight rounded-xl cursor-pointer" src="images/image-product-4-thumbnail.jpg"/>
           </div>
         </div>
       </div>
