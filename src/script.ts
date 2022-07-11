@@ -11,6 +11,13 @@ let thumbnailImgTwo=document.querySelector("#thumbnailImg2") as HTMLImageElement
 let thumbnailImgThree=document.querySelector("#thumbnailImg3") as HTMLImageElement;
 let thumbnailImgFour=document.querySelector("#thumbnailImg4") as HTMLImageElement;
 let thumbnailImges:NodeListOf<Element>=document.querySelectorAll(".thumb");
+let minus=document.querySelector('#decreaseAmount') as HTMLOrSVGScriptElement;
+let plus=document.querySelector('#increaseAmount') as HTMLOrSVGScriptElement;
+let amount=document.querySelector('#itemAmount') as HTMLSpanElement;
+let totalAmount:number=0;
+let cartAmount=document.querySelector('#cardAmount') as HTMLDivElement;
+let addToCart=document.querySelector('#addToCart') as HTMLDivElement;
+let finalAmount:number=0;
 barMenu.addEventListener("click",()=>{
     transparentBlack.classList.remove('hidden');
     asideMenu.classList.remove("-translate-x-full");
@@ -86,3 +93,39 @@ thumbnailImgFour.addEventListener("click",()=>{
     thumbnailImgFour.parentElement?.classList.add("border-4");
     thumbnailImgFour.parentElement?.classList.add("border-orange");
 });
+plus.addEventListener('click',()=>{
+    totalAmount++;
+    amountUpdate(totalAmount);
+});
+minus.addEventListener('click',()=>{
+    totalAmount--;
+    amountUpdate(totalAmount)
+});
+addToCart.addEventListener('click',()=>{
+    cartAmountUpdate(totalAmount);
+    totalAmount=0;
+    amountUpdate(totalAmount);
+});
+//better way to use instead of innerHTML
+function amountUpdate(number:number){
+    totalAmount=number;
+    if(totalAmount<0) totalAmount=0;
+    let amoundItemChilds=amount.childNodes;
+    for(let i=0;i<amoundItemChilds.length;i++)
+        amount.removeChild(amoundItemChilds[i]);
+    amount.appendChild(document.createTextNode(`${totalAmount}`));
+}
+amountUpdate(totalAmount);
+function cartAmountUpdate(total:number=0){
+    finalAmount=total;
+    //instead of innerText
+    //(cartAmount.textContent==="0")
+    if(finalAmount===0){
+        cartAmount.classList.add('hidden');
+    }else{
+        cartAmount.classList.remove('hidden');
+        cartAmount.removeChild(cartAmount.childNodes[0]);
+        cartAmount.appendChild(document.createTextNode(`${finalAmount}`));
+    }
+}
+cartAmountUpdate();

@@ -12,6 +12,13 @@ let thumbnailImgTwo = document.querySelector("#thumbnailImg2");
 let thumbnailImgThree = document.querySelector("#thumbnailImg3");
 let thumbnailImgFour = document.querySelector("#thumbnailImg4");
 let thumbnailImges = document.querySelectorAll(".thumb");
+let minus = document.querySelector('#decreaseAmount');
+let plus = document.querySelector('#increaseAmount');
+let amount = document.querySelector('#itemAmount');
+let totalAmount = 0;
+let cartAmount = document.querySelector('#cardAmount');
+let addToCart = document.querySelector('#addToCart');
+let finalAmount = 0;
 barMenu.addEventListener("click", () => {
     transparentBlack.classList.remove('hidden');
     asideMenu.classList.remove("-translate-x-full");
@@ -95,3 +102,41 @@ thumbnailImgFour.addEventListener("click", () => {
     (_b = thumbnailImgFour.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
     (_c = thumbnailImgFour.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
 });
+plus.addEventListener('click', () => {
+    totalAmount++;
+    amountUpdate(totalAmount);
+});
+minus.addEventListener('click', () => {
+    totalAmount--;
+    amountUpdate(totalAmount);
+});
+addToCart.addEventListener('click', () => {
+    cartAmountUpdate(totalAmount);
+    totalAmount = 0;
+    amountUpdate(totalAmount);
+});
+//better way to use instead of innerHTML
+function amountUpdate(number) {
+    totalAmount = number;
+    if (totalAmount < 0)
+        totalAmount = 0;
+    let amoundItemChilds = amount.childNodes;
+    for (let i = 0; i < amoundItemChilds.length; i++)
+        amount.removeChild(amoundItemChilds[i]);
+    amount.appendChild(document.createTextNode(`${totalAmount}`));
+}
+amountUpdate(totalAmount);
+function cartAmountUpdate(total = 0) {
+    finalAmount = total;
+    //instead of innerText
+    //(cartAmount.textContent==="0")
+    if (finalAmount === 0) {
+        cartAmount.classList.add('hidden');
+    }
+    else {
+        cartAmount.classList.remove('hidden');
+        cartAmount.removeChild(cartAmount.childNodes[0]);
+        cartAmount.appendChild(document.createTextNode(`${finalAmount}`));
+    }
+}
+cartAmountUpdate();

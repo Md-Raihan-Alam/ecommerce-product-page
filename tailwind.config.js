@@ -28,6 +28,7 @@ module.exports = {
         ninety:"90%",
         thumbnailWidth:"50%",
         thumbnail:"20%",
+        fitBorder:"85%",
       },
       borderColor:{
         'orange':"hsl(26, 100%, 55%)",
@@ -44,14 +45,12 @@ module.exports = {
       },
       fontSize:{
         '9px':'9px',
+        'small':'14px',
+        'normal':'17px',
       },
       margin:{
         'res':'5%',
         'big':'15%',
-      },
-      fontSize:{
-        'small':'14px',
-        'normal':'17px',
       },
     },
   },
