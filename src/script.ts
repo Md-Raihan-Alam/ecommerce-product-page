@@ -6,10 +6,15 @@ let optionText:NodeListOf<Element>=document.querySelectorAll('#optionSpan');
 let shopIcon=document.querySelector("#shopIcon") as HTMLImageElement;
 let shopCart=document.querySelector('#shoppingCart') as HTMLDivElement;
 let mainImg=document.querySelector("#mainImg") as HTMLImageElement;
+let upperMainImg=document.querySelector("#uppermainImg") as HTMLImageElement;
 let thumbnailImgOne=document.querySelector("#thumbnailImg1") as HTMLImageElement;
 let thumbnailImgTwo=document.querySelector("#thumbnailImg2") as HTMLImageElement;
 let thumbnailImgThree=document.querySelector("#thumbnailImg3") as HTMLImageElement;
 let thumbnailImgFour=document.querySelector("#thumbnailImg4") as HTMLImageElement;
+let upperThumbnailImgOne=document.querySelector("#upperthumbnailImg1") as HTMLImageElement;
+let upperThumbnailImgTwo=document.querySelector("#upperthumbnailImg2") as HTMLImageElement;
+let upperThumbnailImgThree=document.querySelector("#upperthumbnailImg3") as HTMLImageElement;
+let upperThumbnailImgFour=document.querySelector("#upperthumbnailImg4") as HTMLImageElement;
 let thumbnailImges:NodeListOf<Element>=document.querySelectorAll(".thumb");
 let minus=document.querySelector('#decreaseAmount') as HTMLOrSVGScriptElement;
 let plus=document.querySelector('#increaseAmount') as HTMLOrSVGScriptElement;
@@ -19,6 +24,7 @@ let cartAmount=document.querySelector('#cardAmount') as HTMLDivElement;
 let addToCart=document.querySelector('#addToCart') as HTMLDivElement;
 let finalAmount:number=0;
 let cartMenuDiv=document.querySelector('#cartMenu') as HTMLDivElement;
+let coverImg=document.querySelector('#coverImage') as HTMLDivElement;
 barMenu.addEventListener("click",()=>{
     transparentBlack.classList.remove('hidden');
     asideMenu.classList.remove("-translate-x-full");
@@ -38,73 +44,81 @@ optionText.forEach((e)=>{
 shopIcon.addEventListener('click',()=>{
     shopCart.classList.toggle('hidden');
 });
-thumbnailImgOne.addEventListener("click",()=>{
-    mainImg.setAttribute("src","images/image-product-1.jpg");
-    thumbnailImges.forEach((e)=>{
-        e.classList.remove("opacity-50");
-        e.parentElement?.classList.remove("rounded-xl");
-        e.parentElement?.classList.remove("border-4");
-        e.parentElement?.classList.remove("border-orange");
+thumbnailImges.forEach((e)=>{
+    e.addEventListener("click",()=>{
+        transparentBlack.classList.remove('hidden');
+        coverImg.classList.remove("hidden");
+        coverImg.classList.add('flex');
+        coverImg.classList.add('flex-col');
     });
-    thumbnailImgOne.classList.add("opacity-50");
-    thumbnailImges.forEach((e)=>{
-        e.classList.add("rounded-xl");
-    })
-    thumbnailImgOne.classList.remove("rounded-xl");
-    thumbnailImgOne.parentElement?.classList.add("rounded-xl");
-    thumbnailImgOne.parentElement?.classList.add("border-4");
-    thumbnailImgOne.parentElement?.classList.add("border-orange");
-});
-thumbnailImgTwo.addEventListener("click",(t)=>{
-    mainImg.setAttribute("src","images/image-product-2.jpg");
-    thumbnailImges.forEach((e)=>{
-        e.classList.remove("opacity-50");
-        e.parentElement?.classList.remove("rounded-xl");
-        e.parentElement?.classList.remove("border-4");
-        e.parentElement?.classList.remove("border-orange");
+    upperThumbnailImgOne.addEventListener("click",()=>{
+        upperMainImg.setAttribute("src","images/image-product-1.jpg");
+        thumbnailImges.forEach((e)=>{
+            e.classList.remove("opacity-50");
+            e.parentElement?.classList.remove("rounded-xl");
+            e.parentElement?.classList.remove("border-4");
+            e.parentElement?.classList.remove("border-orange");
+        });
+        upperThumbnailImgOne.classList.add("opacity-50");
+        thumbnailImges.forEach((e)=>{
+            e.classList.add("rounded-xl");
+        })
+        upperThumbnailImgOne.classList.remove("rounded-xl");
+        upperThumbnailImgOne.parentElement?.classList.add("rounded-xl");
+        upperThumbnailImgOne.parentElement?.classList.add("border-4");
+        upperThumbnailImgOne.parentElement?.classList.add("border-orange");
     });
-    thumbnailImgTwo.classList.add("opacity-50");
-    thumbnailImges.forEach((e)=>{
-        e.classList.add("rounded-xl");
-    })
-    thumbnailImgTwo.classList.remove("rounded-xl");
-    thumbnailImgTwo.parentElement?.classList.add("rounded-xl");
-    thumbnailImgTwo.parentElement?.classList.add("border-4");
-    thumbnailImgTwo.parentElement?.classList.add("border-orange");
-});
-thumbnailImgThree.addEventListener("click",()=>{
-    mainImg.setAttribute("src","images/image-product-3.jpg");
-    thumbnailImges.forEach((e)=>{
-        e.classList.remove("opacity-50");
-        e.parentElement?.classList.remove("rounded-xl");
-        e.parentElement?.classList.remove("border-4");
-        e.parentElement?.classList.remove("border-orange");
+    upperThumbnailImgTwo.addEventListener("click",(t)=>{
+        upperMainImg.setAttribute("src","images/image-product-2.jpg");
+        thumbnailImges.forEach((e)=>{
+            e.classList.remove("opacity-50");
+            e.parentElement?.classList.remove("rounded-xl");
+            e.parentElement?.classList.remove("border-4");
+            e.parentElement?.classList.remove("border-orange");
+        });
+        thumbnailImgTwo.classList.add("opacity-50");
+        thumbnailImges.forEach((e)=>{
+            e.classList.add("rounded-xl");
+        })
+        thumbnailImgTwo.classList.remove("rounded-xl");
+        thumbnailImgTwo.parentElement?.classList.add("rounded-xl");
+        thumbnailImgTwo.parentElement?.classList.add("border-4");
+        thumbnailImgTwo.parentElement?.classList.add("border-orange");
     });
-    thumbnailImgThree.classList.add("opacity-50");
-    thumbnailImges.forEach((e)=>{
-        e.classList.add("rounded-xl");
+    thumbnailImgThree.addEventListener("click",()=>{
+        upperMainImg.setAttribute("src","images/image-product-3.jpg");
+        thumbnailImges.forEach((e)=>{
+            e.classList.remove("opacity-50");
+            e.parentElement?.classList.remove("rounded-xl");
+            e.parentElement?.classList.remove("border-4");
+            e.parentElement?.classList.remove("border-orange");
+        });
+        thumbnailImgThree.classList.add("opacity-50");
+        thumbnailImges.forEach((e)=>{
+            e.classList.add("rounded-xl");
+        });
+        thumbnailImgThree.classList.remove("rounded-xl");
+        thumbnailImgThree.parentElement?.classList.add("rounded-xl");
+        thumbnailImgThree.parentElement?.classList.add("border-4");
+        thumbnailImgThree.parentElement?.classList.add("border-orange");
     });
-    thumbnailImgThree.classList.remove("rounded-xl");
-    thumbnailImgThree.parentElement?.classList.add("rounded-xl");
-    thumbnailImgThree.parentElement?.classList.add("border-4");
-    thumbnailImgThree.parentElement?.classList.add("border-orange");
-});
-thumbnailImgFour.addEventListener("click",()=>{
-    mainImg.setAttribute("src","images/image-product-4.jpg");
-    thumbnailImges.forEach((e)=>{
-        e.classList.remove("opacity-50");
-        e.parentElement?.classList.remove("rounded-xl");
-        e.parentElement?.classList.remove("border-4");
-        e.parentElement?.classList.remove("border-orange");
+    thumbnailImgFour.addEventListener("click",()=>{
+        upperMainImg.setAttribute("src","images/image-product-4.jpg");
+        thumbnailImges.forEach((e)=>{
+            e.classList.remove("opacity-50");
+            e.parentElement?.classList.remove("rounded-xl");
+            e.parentElement?.classList.remove("border-4");
+            e.parentElement?.classList.remove("border-orange");
+        });
+        thumbnailImgFour.classList.add("opacity-50");
+        thumbnailImges.forEach((e)=>{
+            e.classList.add("rounded-xl");
+        })
+        thumbnailImgFour.classList.remove("rounded-xl");
+        thumbnailImgFour.parentElement?.classList.add("rounded-xl");
+        thumbnailImgFour.parentElement?.classList.add("border-4");
+        thumbnailImgFour.parentElement?.classList.add("border-orange");
     });
-    thumbnailImgFour.classList.add("opacity-50");
-    thumbnailImges.forEach((e)=>{
-        e.classList.add("rounded-xl");
-    })
-    thumbnailImgFour.classList.remove("rounded-xl");
-    thumbnailImgFour.parentElement?.classList.add("rounded-xl");
-    thumbnailImgFour.parentElement?.classList.add("border-4");
-    thumbnailImgFour.parentElement?.classList.add("border-orange");
 });
 plus.addEventListener('click',()=>{
     totalAmount++;
