@@ -16,6 +16,7 @@ let upperThumbnailImgTwo=document.querySelector("#upperthumbnailImg2") as HTMLIm
 let upperThumbnailImgThree=document.querySelector("#upperthumbnailImg3") as HTMLImageElement;
 let upperThumbnailImgFour=document.querySelector("#upperthumbnailImg4") as HTMLImageElement;
 let thumbnailImges:NodeListOf<Element>=document.querySelectorAll(".thumb");
+let upperThumbnailImages:NodeListOf<Element>=document.querySelectorAll('.upperThumb');
 let minus=document.querySelector('#decreaseAmount') as HTMLOrSVGScriptElement;
 let plus=document.querySelector('#increaseAmount') as HTMLOrSVGScriptElement;
 let amount=document.querySelector('#itemAmount') as HTMLSpanElement;
@@ -53,14 +54,14 @@ thumbnailImges.forEach((e)=>{
     });
     upperThumbnailImgOne.addEventListener("click",()=>{
         upperMainImg.setAttribute("src","images/image-product-1.jpg");
-        thumbnailImges.forEach((e)=>{
-            e.classList.remove("opacity-50");
+        upperThumbnailImages.forEach((e)=>{
+            e.classList.remove("opacity-30");
             e.parentElement?.classList.remove("rounded-xl");
             e.parentElement?.classList.remove("border-4");
             e.parentElement?.classList.remove("border-orange");
         });
         upperThumbnailImgOne.classList.add("opacity-50");
-        thumbnailImges.forEach((e)=>{
+        upperThumbnailImages.forEach((e)=>{
             e.classList.add("rounded-xl");
         })
         upperThumbnailImgOne.classList.remove("rounded-xl");
@@ -70,54 +71,54 @@ thumbnailImges.forEach((e)=>{
     });
     upperThumbnailImgTwo.addEventListener("click",(t)=>{
         upperMainImg.setAttribute("src","images/image-product-2.jpg");
-        thumbnailImges.forEach((e)=>{
-            e.classList.remove("opacity-50");
+        upperThumbnailImages.forEach((e)=>{
+            e.classList.remove("opacity-30");
             e.parentElement?.classList.remove("rounded-xl");
             e.parentElement?.classList.remove("border-4");
             e.parentElement?.classList.remove("border-orange");
         });
-        thumbnailImgTwo.classList.add("opacity-50");
-        thumbnailImges.forEach((e)=>{
+        upperThumbnailImgTwo.classList.add("opacity-50");
+        upperThumbnailImages.forEach((e)=>{
             e.classList.add("rounded-xl");
         })
-        thumbnailImgTwo.classList.remove("rounded-xl");
-        thumbnailImgTwo.parentElement?.classList.add("rounded-xl");
-        thumbnailImgTwo.parentElement?.classList.add("border-4");
-        thumbnailImgTwo.parentElement?.classList.add("border-orange");
+        upperThumbnailImgTwo.classList.remove("rounded-xl");
+        upperThumbnailImgTwo.parentElement?.classList.add("rounded-xl");
+        upperThumbnailImgTwo.parentElement?.classList.add("border-4");
+        upperThumbnailImgTwo.parentElement?.classList.add("border-orange");
     });
-    thumbnailImgThree.addEventListener("click",()=>{
+    upperThumbnailImgThree.addEventListener("click",()=>{
         upperMainImg.setAttribute("src","images/image-product-3.jpg");
-        thumbnailImges.forEach((e)=>{
-            e.classList.remove("opacity-50");
+        upperThumbnailImages.forEach((e)=>{
+            e.classList.remove("opacity-30");
             e.parentElement?.classList.remove("rounded-xl");
             e.parentElement?.classList.remove("border-4");
             e.parentElement?.classList.remove("border-orange");
         });
-        thumbnailImgThree.classList.add("opacity-50");
-        thumbnailImges.forEach((e)=>{
+        upperThumbnailImgThree.classList.add("opacity-50");
+        upperThumbnailImages.forEach((e)=>{
             e.classList.add("rounded-xl");
         });
-        thumbnailImgThree.classList.remove("rounded-xl");
-        thumbnailImgThree.parentElement?.classList.add("rounded-xl");
-        thumbnailImgThree.parentElement?.classList.add("border-4");
-        thumbnailImgThree.parentElement?.classList.add("border-orange");
+        upperThumbnailImgThree.classList.remove("rounded-xl");
+        upperThumbnailImgThree.parentElement?.classList.add("rounded-xl");
+        upperThumbnailImgThree.parentElement?.classList.add("border-4");
+        upperThumbnailImgThree.parentElement?.classList.add("border-orange");
     });
-    thumbnailImgFour.addEventListener("click",()=>{
+    upperThumbnailImgFour.addEventListener("click",()=>{
         upperMainImg.setAttribute("src","images/image-product-4.jpg");
-        thumbnailImges.forEach((e)=>{
-            e.classList.remove("opacity-50");
+        upperThumbnailImages.forEach((e)=>{
+            e.classList.remove("opacity-30");
             e.parentElement?.classList.remove("rounded-xl");
             e.parentElement?.classList.remove("border-4");
             e.parentElement?.classList.remove("border-orange");
         });
-        thumbnailImgFour.classList.add("opacity-50");
-        thumbnailImges.forEach((e)=>{
+        upperThumbnailImgFour.classList.add("opacity-50");
+        upperThumbnailImages.forEach((e)=>{
             e.classList.add("rounded-xl");
         })
-        thumbnailImgFour.classList.remove("rounded-xl");
-        thumbnailImgFour.parentElement?.classList.add("rounded-xl");
-        thumbnailImgFour.parentElement?.classList.add("border-4");
-        thumbnailImgFour.parentElement?.classList.add("border-orange");
+        upperThumbnailImgFour.classList.remove("rounded-xl");
+        upperThumbnailImgFour.parentElement?.classList.add("rounded-xl");
+        upperThumbnailImgFour.parentElement?.classList.add("border-4");
+        upperThumbnailImgFour.parentElement?.classList.add("border-orange");
     });
 });
 plus.addEventListener('click',()=>{

@@ -17,6 +17,7 @@ let upperThumbnailImgTwo = document.querySelector("#upperthumbnailImg2");
 let upperThumbnailImgThree = document.querySelector("#upperthumbnailImg3");
 let upperThumbnailImgFour = document.querySelector("#upperthumbnailImg4");
 let thumbnailImges = document.querySelectorAll(".thumb");
+let upperThumbnailImages = document.querySelectorAll('.upperThumb');
 let minus = document.querySelector('#decreaseAmount');
 let plus = document.querySelector('#increaseAmount');
 let amount = document.querySelector('#itemAmount');
@@ -55,15 +56,15 @@ thumbnailImges.forEach((e) => {
     upperThumbnailImgOne.addEventListener("click", () => {
         var _a, _b, _c;
         upperMainImg.setAttribute("src", "images/image-product-1.jpg");
-        thumbnailImges.forEach((e) => {
+        upperThumbnailImages.forEach((e) => {
             var _a, _b, _c;
-            e.classList.remove("opacity-50");
+            e.classList.remove("opacity-30");
             (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
             (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
             (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
         });
         upperThumbnailImgOne.classList.add("opacity-50");
-        thumbnailImges.forEach((e) => {
+        upperThumbnailImages.forEach((e) => {
             e.classList.add("rounded-xl");
         });
         upperThumbnailImgOne.classList.remove("rounded-xl");
@@ -74,59 +75,59 @@ thumbnailImges.forEach((e) => {
     upperThumbnailImgTwo.addEventListener("click", (t) => {
         var _a, _b, _c;
         upperMainImg.setAttribute("src", "images/image-product-2.jpg");
-        thumbnailImges.forEach((e) => {
+        upperThumbnailImages.forEach((e) => {
             var _a, _b, _c;
-            e.classList.remove("opacity-50");
+            e.classList.remove("opacity-30");
             (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
             (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
             (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
         });
-        thumbnailImgTwo.classList.add("opacity-50");
-        thumbnailImges.forEach((e) => {
+        upperThumbnailImgTwo.classList.add("opacity-50");
+        upperThumbnailImages.forEach((e) => {
             e.classList.add("rounded-xl");
         });
-        thumbnailImgTwo.classList.remove("rounded-xl");
-        (_a = thumbnailImgTwo.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
-        (_b = thumbnailImgTwo.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
-        (_c = thumbnailImgTwo.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
+        upperThumbnailImgTwo.classList.remove("rounded-xl");
+        (_a = upperThumbnailImgTwo.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
+        (_b = upperThumbnailImgTwo.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
+        (_c = upperThumbnailImgTwo.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
     });
-    thumbnailImgThree.addEventListener("click", () => {
+    upperThumbnailImgThree.addEventListener("click", () => {
         var _a, _b, _c;
         upperMainImg.setAttribute("src", "images/image-product-3.jpg");
-        thumbnailImges.forEach((e) => {
+        upperThumbnailImages.forEach((e) => {
             var _a, _b, _c;
-            e.classList.remove("opacity-50");
+            e.classList.remove("opacity-30");
             (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
             (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
             (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
         });
-        thumbnailImgThree.classList.add("opacity-50");
-        thumbnailImges.forEach((e) => {
+        upperThumbnailImgThree.classList.add("opacity-50");
+        upperThumbnailImages.forEach((e) => {
             e.classList.add("rounded-xl");
         });
-        thumbnailImgThree.classList.remove("rounded-xl");
-        (_a = thumbnailImgThree.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
-        (_b = thumbnailImgThree.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
-        (_c = thumbnailImgThree.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
+        upperThumbnailImgThree.classList.remove("rounded-xl");
+        (_a = upperThumbnailImgThree.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
+        (_b = upperThumbnailImgThree.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
+        (_c = upperThumbnailImgThree.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
     });
-    thumbnailImgFour.addEventListener("click", () => {
+    upperThumbnailImgFour.addEventListener("click", () => {
         var _a, _b, _c;
         upperMainImg.setAttribute("src", "images/image-product-4.jpg");
-        thumbnailImges.forEach((e) => {
+        upperThumbnailImages.forEach((e) => {
             var _a, _b, _c;
-            e.classList.remove("opacity-50");
+            e.classList.remove("opacity-30");
             (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
             (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
             (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
         });
-        thumbnailImgFour.classList.add("opacity-50");
-        thumbnailImges.forEach((e) => {
+        upperThumbnailImgFour.classList.add("opacity-50");
+        upperThumbnailImages.forEach((e) => {
             e.classList.add("rounded-xl");
         });
-        thumbnailImgFour.classList.remove("rounded-xl");
-        (_a = thumbnailImgFour.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
-        (_b = thumbnailImgFour.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
-        (_c = thumbnailImgFour.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
+        upperThumbnailImgFour.classList.remove("rounded-xl");
+        (_a = upperThumbnailImgFour.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
+        (_b = upperThumbnailImgFour.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
+        (_c = upperThumbnailImgFour.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
     });
 });
 plus.addEventListener('click', () => {
