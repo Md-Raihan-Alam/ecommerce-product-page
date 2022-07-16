@@ -17,6 +17,7 @@ let upperThumbnailImgThree=document.querySelector("#upperthumbnailImg3") as HTML
 let upperThumbnailImgFour=document.querySelector("#upperthumbnailImg4") as HTMLImageElement;
 let thumbnailImges:NodeListOf<Element>=document.querySelectorAll(".thumb");
 let upperThumbnailImages:NodeListOf<Element>=document.querySelectorAll('.upperThumb');
+let closeMark=document.querySelector("#closeImage") as HTMLOrSVGScriptElement;
 let minus=document.querySelector('#decreaseAmount') as HTMLOrSVGScriptElement;
 let plus=document.querySelector('#increaseAmount') as HTMLOrSVGScriptElement;
 let amount=document.querySelector('#itemAmount') as HTMLSpanElement;
@@ -51,6 +52,12 @@ thumbnailImges.forEach((e)=>{
         coverImg.classList.remove("hidden");
         coverImg.classList.add('flex');
         coverImg.classList.add('flex-col');
+    });
+    closeMark.addEventListener('click',(e)=>{
+        transparentBlack.classList.add('hidden');
+        coverImg.classList.add('hidden');
+        coverImg.classList.remove('flex');
+        coverImg.classList.remove('flex-col');
     });
     upperThumbnailImgOne.addEventListener("click",()=>{
         upperMainImg.setAttribute("src","images/image-product-1.jpg");

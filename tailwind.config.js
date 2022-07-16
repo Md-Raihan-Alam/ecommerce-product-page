@@ -31,7 +31,7 @@ module.exports = {
         fitBorder:"85%",
         thumbailHeight:"70px",
         upperHeight:"500px",
-        upperPer:"84%",
+        upperPer:"80%",
       },
       borderColor:{
         'orange':"hsl(26, 100%, 55%)",
