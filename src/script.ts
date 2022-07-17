@@ -18,6 +18,12 @@ let upperThumbnailImgFour=document.querySelector("#upperthumbnailImg4") as HTMLI
 let thumbnailImges:NodeListOf<Element>=document.querySelectorAll(".thumb");
 let upperThumbnailImages:NodeListOf<Element>=document.querySelectorAll('.upperThumb');
 let closeMark=document.querySelector("#closeImage") as HTMLOrSVGScriptElement;
+let closeDiv=document.querySelector('#closeDiv') as HTMLDivElement;
+let closeColor=document.querySelector("#closeColor") as HTMLOrSVGScriptElement;
+let nextPic=document.querySelector('#nextPic') as HTMLDivElement;
+let prevPic=document.querySelector('#prevPic') as HTMLDivElement;
+let nextColor=document.querySelector("#nextColor") as HTMLOrSVGScriptElement;
+let prevColor=document.querySelector("#prevColor") as HTMLOrSVGScriptElement;
 let thumbnaimNum:number=0;
 let minus=document.querySelector('#decreaseAmount') as HTMLOrSVGScriptElement;
 let plus=document.querySelector('#increaseAmount') as HTMLOrSVGScriptElement;
@@ -135,6 +141,24 @@ thumbnailImges.forEach((e)=>{
         upperThumbnailImgFour.parentElement?.classList.add("border-4");
         upperThumbnailImgFour.parentElement?.classList.add("border-orange");
     });
+});
+nextPic.addEventListener('mouseover',()=>{
+    nextColor.setAttribute('stroke','hsl(26, 100%, 55%)');
+});
+nextPic.addEventListener('mouseout',()=>{
+    nextColor.setAttribute('stroke','#1D2026');
+});
+prevPic.addEventListener('mouseover',()=>{
+    prevColor.setAttribute('stroke','hsl(26, 100%, 55%)');
+});
+prevPic.addEventListener('mouseout',()=>{
+    prevColor.setAttribute('stroke','#1D2026');
+});
+closeDiv.addEventListener('mouseover',()=>{
+    closeColor.setAttribute('fill','hsl(26, 100%, 55%)');
+});
+closeDiv.addEventListener('mouseout',()=>{
+    closeColor.setAttribute('fill','#1D2026');
 });
 plus.addEventListener('click',()=>{
     totalAmount++;

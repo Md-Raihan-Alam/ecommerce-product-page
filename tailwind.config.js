@@ -32,6 +32,9 @@ module.exports = {
         thumbailHeight:"70px",
         upperHeight:"500px",
         upperPer:"80%",
+        sideCenter:"32%",
+        center:"46%",
+        bgRound:"40px",
       },
       borderColor:{
         'orange':"hsl(26, 100%, 55%)",

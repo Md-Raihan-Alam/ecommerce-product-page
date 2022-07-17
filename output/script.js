@@ -19,6 +19,12 @@ let upperThumbnailImgFour = document.querySelector("#upperthumbnailImg4");
 let thumbnailImges = document.querySelectorAll(".thumb");
 let upperThumbnailImages = document.querySelectorAll('.upperThumb');
 let closeMark = document.querySelector("#closeImage");
+let closeDiv = document.querySelector('#closeDiv');
+let closeColor = document.querySelector("#closeColor");
+let nextPic = document.querySelector('#nextPic');
+let prevPic = document.querySelector('#prevPic');
+let nextColor = document.querySelector("#nextColor");
+let prevColor = document.querySelector("#prevColor");
 let thumbnaimNum = 0;
 let minus = document.querySelector('#decreaseAmount');
 let plus = document.querySelector('#increaseAmount');
@@ -144,6 +150,24 @@ thumbnailImges.forEach((e) => {
         (_b = upperThumbnailImgFour.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
         (_c = upperThumbnailImgFour.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
     });
+});
+nextPic.addEventListener('mouseover', () => {
+    nextColor.setAttribute('stroke', 'hsl(26, 100%, 55%)');
+});
+nextPic.addEventListener('mouseout', () => {
+    nextColor.setAttribute('stroke', '#1D2026');
+});
+prevPic.addEventListener('mouseover', () => {
+    prevColor.setAttribute('stroke', 'hsl(26, 100%, 55%)');
+});
+prevPic.addEventListener('mouseout', () => {
+    prevColor.setAttribute('stroke', '#1D2026');
+});
+closeDiv.addEventListener('mouseover', () => {
+    closeColor.setAttribute('fill', 'hsl(26, 100%, 55%)');
+});
+closeDiv.addEventListener('mouseout', () => {
+    closeColor.setAttribute('fill', '#1D2026');
 });
 plus.addEventListener('click', () => {
     totalAmount++;
