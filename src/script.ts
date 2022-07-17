@@ -18,6 +18,7 @@ let upperThumbnailImgFour=document.querySelector("#upperthumbnailImg4") as HTMLI
 let thumbnailImges:NodeListOf<Element>=document.querySelectorAll(".thumb");
 let upperThumbnailImages:NodeListOf<Element>=document.querySelectorAll('.upperThumb');
 let closeMark=document.querySelector("#closeImage") as HTMLOrSVGScriptElement;
+let thumbnaimNum:number=0;
 let minus=document.querySelector('#decreaseAmount') as HTMLOrSVGScriptElement;
 let plus=document.querySelector('#increaseAmount') as HTMLOrSVGScriptElement;
 let amount=document.querySelector('#itemAmount') as HTMLSpanElement;
@@ -58,16 +59,20 @@ thumbnailImges.forEach((e)=>{
         coverImg.classList.add('hidden');
         coverImg.classList.remove('flex');
         coverImg.classList.remove('flex-col');
+        let currentPic=upperMainImg.getAttribute('src');
+        mainImg.setAttribute('src',`${currentPic}`);
+        thumbNailUpdate(thumbnaimNum);
     });
     upperThumbnailImgOne.addEventListener("click",()=>{
+        thumbnaimNum=1;
         upperMainImg.setAttribute("src","images/image-product-1.jpg");
         upperThumbnailImages.forEach((e)=>{
-            e.classList.remove("opacity-30");
+            e.classList.remove("opacity-70");
             e.parentElement?.classList.remove("rounded-xl");
             e.parentElement?.classList.remove("border-4");
             e.parentElement?.classList.remove("border-orange");
         });
-        upperThumbnailImgOne.classList.add("opacity-50");
+        upperThumbnailImgOne.classList.add("opacity-70");
         upperThumbnailImages.forEach((e)=>{
             e.classList.add("rounded-xl");
         })
@@ -76,15 +81,16 @@ thumbnailImges.forEach((e)=>{
         upperThumbnailImgOne.parentElement?.classList.add("border-4");
         upperThumbnailImgOne.parentElement?.classList.add("border-orange");
     });
-    upperThumbnailImgTwo.addEventListener("click",(t)=>{
+    upperThumbnailImgTwo.addEventListener("click",()=>{
+        thumbnaimNum=2;
         upperMainImg.setAttribute("src","images/image-product-2.jpg");
         upperThumbnailImages.forEach((e)=>{
-            e.classList.remove("opacity-30");
+            e.classList.remove("opacity-70");
             e.parentElement?.classList.remove("rounded-xl");
             e.parentElement?.classList.remove("border-4");
             e.parentElement?.classList.remove("border-orange");
         });
-        upperThumbnailImgTwo.classList.add("opacity-50");
+        upperThumbnailImgTwo.classList.add("opacity-70");
         upperThumbnailImages.forEach((e)=>{
             e.classList.add("rounded-xl");
         })
@@ -94,14 +100,15 @@ thumbnailImges.forEach((e)=>{
         upperThumbnailImgTwo.parentElement?.classList.add("border-orange");
     });
     upperThumbnailImgThree.addEventListener("click",()=>{
+        thumbnaimNum=3;
         upperMainImg.setAttribute("src","images/image-product-3.jpg");
         upperThumbnailImages.forEach((e)=>{
-            e.classList.remove("opacity-30");
+            e.classList.remove("opacity-70");
             e.parentElement?.classList.remove("rounded-xl");
             e.parentElement?.classList.remove("border-4");
             e.parentElement?.classList.remove("border-orange");
         });
-        upperThumbnailImgThree.classList.add("opacity-50");
+        upperThumbnailImgThree.classList.add("opacity-70");
         upperThumbnailImages.forEach((e)=>{
             e.classList.add("rounded-xl");
         });
@@ -111,14 +118,15 @@ thumbnailImges.forEach((e)=>{
         upperThumbnailImgThree.parentElement?.classList.add("border-orange");
     });
     upperThumbnailImgFour.addEventListener("click",()=>{
+        thumbnaimNum=4;
         upperMainImg.setAttribute("src","images/image-product-4.jpg");
         upperThumbnailImages.forEach((e)=>{
-            e.classList.remove("opacity-30");
+            e.classList.remove("opacity-70");
             e.parentElement?.classList.remove("rounded-xl");
             e.parentElement?.classList.remove("border-4");
             e.parentElement?.classList.remove("border-orange");
         });
-        upperThumbnailImgFour.classList.add("opacity-50");
+        upperThumbnailImgFour.classList.add("opacity-70");
         upperThumbnailImages.forEach((e)=>{
             e.classList.add("rounded-xl");
         })
@@ -192,3 +200,39 @@ function cartMenu(totalItem:number=0){
     }
 }
 cartMenu();
+function thumbNailUpdate(thumbOrder:number){
+    thumbnailImges.forEach((e)=>{
+        e.classList.remove("opacity-50");
+        e.parentElement?.classList.remove("rounded-xl");
+        e.parentElement?.classList.remove("border-4");
+        e.parentElement?.classList.remove("border-orange");
+    });
+    if(thumbOrder===1){
+        thumbnailImgOne.classList.add("opacity-50");
+        thumbnailImgOne.classList.remove("rounded-xl");
+        thumbnailImgOne.parentElement?.classList.add("rounded-xl");
+        thumbnailImgOne.parentElement?.classList.add("border-4");
+        thumbnailImgOne.parentElement?.classList.add("border-orange");
+    }else if(thumbOrder===2){
+        thumbnailImgTwo.classList.add("opacity-50");
+        thumbnailImgTwo.classList.remove("rounded-xl");
+        thumbnailImgTwo.parentElement?.classList.add("rounded-xl");
+        thumbnailImgTwo.parentElement?.classList.add("border-4");
+        thumbnailImgTwo.parentElement?.classList.add("border-orange");
+    }else if(thumbOrder===3){
+        thumbnailImgThree.classList.add("opacity-50");
+        thumbnailImgThree.classList.remove("rounded-xl");
+        thumbnailImgThree.parentElement?.classList.add("rounded-xl");
+        thumbnailImgThree.parentElement?.classList.add("border-4");
+        thumbnailImgThree.parentElement?.classList.add("border-orange");
+    }else if(thumbOrder===4){
+        thumbnailImgFour.classList.add("opacity-50");
+        thumbnailImgFour.classList.remove("rounded-xl");
+        thumbnailImgFour.parentElement?.classList.add("rounded-xl");
+        thumbnailImgFour.parentElement?.classList.add("border-4");
+        thumbnailImgFour.parentElement?.classList.add("border-orange");
+    }
+    thumbnailImges.forEach((e)=>{
+        e.classList.add("rounded-xl");
+    });
+}
