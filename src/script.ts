@@ -71,75 +71,19 @@ thumbnailImges.forEach((e)=>{
     });
     upperThumbnailImgOne.addEventListener("click",()=>{
         thumbnaimNum=1;
-        upperMainImg.setAttribute("src","images/image-product-1.jpg");
-        upperThumbnailImages.forEach((e)=>{
-            e.classList.remove("opacity-70");
-            e.parentElement?.classList.remove("rounded-xl");
-            e.parentElement?.classList.remove("border-4");
-            e.parentElement?.classList.remove("border-orange");
-        });
-        upperThumbnailImgOne.classList.add("opacity-70");
-        upperThumbnailImages.forEach((e)=>{
-            e.classList.add("rounded-xl");
-        })
-        upperThumbnailImgOne.classList.remove("rounded-xl");
-        upperThumbnailImgOne.parentElement?.classList.add("rounded-xl");
-        upperThumbnailImgOne.parentElement?.classList.add("border-4");
-        upperThumbnailImgOne.parentElement?.classList.add("border-orange");
+        imgSetupOne();
     });
     upperThumbnailImgTwo.addEventListener("click",()=>{
         thumbnaimNum=2;
-        upperMainImg.setAttribute("src","images/image-product-2.jpg");
-        upperThumbnailImages.forEach((e)=>{
-            e.classList.remove("opacity-70");
-            e.parentElement?.classList.remove("rounded-xl");
-            e.parentElement?.classList.remove("border-4");
-            e.parentElement?.classList.remove("border-orange");
-        });
-        upperThumbnailImgTwo.classList.add("opacity-70");
-        upperThumbnailImages.forEach((e)=>{
-            e.classList.add("rounded-xl");
-        })
-        upperThumbnailImgTwo.classList.remove("rounded-xl");
-        upperThumbnailImgTwo.parentElement?.classList.add("rounded-xl");
-        upperThumbnailImgTwo.parentElement?.classList.add("border-4");
-        upperThumbnailImgTwo.parentElement?.classList.add("border-orange");
+        imgSetupTwo();
     });
     upperThumbnailImgThree.addEventListener("click",()=>{
         thumbnaimNum=3;
-        upperMainImg.setAttribute("src","images/image-product-3.jpg");
-        upperThumbnailImages.forEach((e)=>{
-            e.classList.remove("opacity-70");
-            e.parentElement?.classList.remove("rounded-xl");
-            e.parentElement?.classList.remove("border-4");
-            e.parentElement?.classList.remove("border-orange");
-        });
-        upperThumbnailImgThree.classList.add("opacity-70");
-        upperThumbnailImages.forEach((e)=>{
-            e.classList.add("rounded-xl");
-        });
-        upperThumbnailImgThree.classList.remove("rounded-xl");
-        upperThumbnailImgThree.parentElement?.classList.add("rounded-xl");
-        upperThumbnailImgThree.parentElement?.classList.add("border-4");
-        upperThumbnailImgThree.parentElement?.classList.add("border-orange");
+        imgSetupThree();
     });
     upperThumbnailImgFour.addEventListener("click",()=>{
         thumbnaimNum=4;
-        upperMainImg.setAttribute("src","images/image-product-4.jpg");
-        upperThumbnailImages.forEach((e)=>{
-            e.classList.remove("opacity-70");
-            e.parentElement?.classList.remove("rounded-xl");
-            e.parentElement?.classList.remove("border-4");
-            e.parentElement?.classList.remove("border-orange");
-        });
-        upperThumbnailImgFour.classList.add("opacity-70");
-        upperThumbnailImages.forEach((e)=>{
-            e.classList.add("rounded-xl");
-        })
-        upperThumbnailImgFour.classList.remove("rounded-xl");
-        upperThumbnailImgFour.parentElement?.classList.add("rounded-xl");
-        upperThumbnailImgFour.parentElement?.classList.add("border-4");
-        upperThumbnailImgFour.parentElement?.classList.add("border-orange");
+        imgSetupFour();
     });
 });
 nextPic.addEventListener('mouseover',()=>{
@@ -159,6 +103,32 @@ closeDiv.addEventListener('mouseover',()=>{
 });
 closeDiv.addEventListener('mouseout',()=>{
     closeColor.setAttribute('fill','#1D2026');
+});
+nextPic.addEventListener('click',()=>{
+    thumbnaimNum++;
+    thumbnaimNum=thumbnaimNum>4? 1:thumbnaimNum;
+    if(thumbnaimNum===1){
+        imgSetupOne();
+    }else if(thumbnaimNum===2){
+        imgSetupTwo();
+    }else if(thumbnaimNum===3){
+        imgSetupThree();
+    }else if(thumbnaimNum===4){
+        imgSetupFour();
+    }
+});
+prevPic.addEventListener('click',()=>{
+    thumbnaimNum--;
+    thumbnaimNum=thumbnaimNum<1? 4:thumbnaimNum;
+    if(thumbnaimNum===1){
+        imgSetupOne();
+    }else if(thumbnaimNum===2){
+        imgSetupTwo();
+    }else if(thumbnaimNum===3){
+        imgSetupThree();
+    }else if(thumbnaimNum===4){
+        imgSetupFour();
+    }
 });
 plus.addEventListener('click',()=>{
     totalAmount++;
@@ -260,4 +230,73 @@ function thumbNailUpdate(thumbOrder:number){
         thumbnailImgFour.parentElement?.classList.add("border-4");
         thumbnailImgFour.parentElement?.classList.add("border-orange");
     }
+}
+function imgSetupOne()
+{
+    upperMainImg.setAttribute("src","images/image-product-1.jpg");
+        upperThumbnailImages.forEach((e)=>{
+            e.classList.remove("opacity-70");
+            e.parentElement?.classList.remove("rounded-xl");
+            e.parentElement?.classList.remove("border-4");
+            e.parentElement?.classList.remove("border-orange");
+        });
+        upperThumbnailImgOne.classList.add("opacity-70");
+        upperThumbnailImages.forEach((e)=>{
+            e.classList.add("rounded-xl");
+        })
+        upperThumbnailImgOne.classList.remove("rounded-xl");
+        upperThumbnailImgOne.parentElement?.classList.add("rounded-xl");
+        upperThumbnailImgOne.parentElement?.classList.add("border-4");
+        upperThumbnailImgOne.parentElement?.classList.add("border-orange");
+}
+function imgSetupTwo(){
+    upperMainImg.setAttribute("src","images/image-product-2.jpg");
+        upperThumbnailImages.forEach((e)=>{
+            e.classList.remove("opacity-70");
+            e.parentElement?.classList.remove("rounded-xl");
+            e.parentElement?.classList.remove("border-4");
+            e.parentElement?.classList.remove("border-orange");
+        });
+        upperThumbnailImgTwo.classList.add("opacity-70");
+        upperThumbnailImages.forEach((e)=>{
+            e.classList.add("rounded-xl");
+        })
+        upperThumbnailImgTwo.classList.remove("rounded-xl");
+        upperThumbnailImgTwo.parentElement?.classList.add("rounded-xl");
+        upperThumbnailImgTwo.parentElement?.classList.add("border-4");
+        upperThumbnailImgTwo.parentElement?.classList.add("border-orange");
+}
+function imgSetupThree(){
+    upperMainImg.setAttribute("src","images/image-product-3.jpg");
+    upperThumbnailImages.forEach((e)=>{
+        e.classList.remove("opacity-70");
+        e.parentElement?.classList.remove("rounded-xl");
+        e.parentElement?.classList.remove("border-4");
+        e.parentElement?.classList.remove("border-orange");
+    });
+    upperThumbnailImgThree.classList.add("opacity-70");
+    upperThumbnailImages.forEach((e)=>{
+        e.classList.add("rounded-xl");
+    });
+    upperThumbnailImgThree.classList.remove("rounded-xl");
+    upperThumbnailImgThree.parentElement?.classList.add("rounded-xl");
+    upperThumbnailImgThree.parentElement?.classList.add("border-4");
+    upperThumbnailImgThree.parentElement?.classList.add("border-orange");
+}
+function imgSetupFour(){
+    upperMainImg.setAttribute("src","images/image-product-4.jpg");
+    upperThumbnailImages.forEach((e)=>{
+        e.classList.remove("opacity-70");
+        e.parentElement?.classList.remove("rounded-xl");
+        e.parentElement?.classList.remove("border-4");
+        e.parentElement?.classList.remove("border-orange");
+    });
+    upperThumbnailImgFour.classList.add("opacity-70");
+    upperThumbnailImages.forEach((e)=>{
+        e.classList.add("rounded-xl");
+    })
+    upperThumbnailImgFour.classList.remove("rounded-xl");
+    upperThumbnailImgFour.parentElement?.classList.add("rounded-xl");
+    upperThumbnailImgFour.parentElement?.classList.add("border-4");
+    upperThumbnailImgFour.parentElement?.classList.add("border-orange");
 }

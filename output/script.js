@@ -71,84 +71,20 @@ thumbnailImges.forEach((e) => {
         thumbNailUpdate(thumbnaimNum);
     });
     upperThumbnailImgOne.addEventListener("click", () => {
-        var _a, _b, _c;
         thumbnaimNum = 1;
-        upperMainImg.setAttribute("src", "images/image-product-1.jpg");
-        upperThumbnailImages.forEach((e) => {
-            var _a, _b, _c;
-            e.classList.remove("opacity-70");
-            (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
-            (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
-            (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
-        });
-        upperThumbnailImgOne.classList.add("opacity-70");
-        upperThumbnailImages.forEach((e) => {
-            e.classList.add("rounded-xl");
-        });
-        upperThumbnailImgOne.classList.remove("rounded-xl");
-        (_a = upperThumbnailImgOne.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
-        (_b = upperThumbnailImgOne.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
-        (_c = upperThumbnailImgOne.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
+        imgSetupOne();
     });
     upperThumbnailImgTwo.addEventListener("click", () => {
-        var _a, _b, _c;
         thumbnaimNum = 2;
-        upperMainImg.setAttribute("src", "images/image-product-2.jpg");
-        upperThumbnailImages.forEach((e) => {
-            var _a, _b, _c;
-            e.classList.remove("opacity-70");
-            (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
-            (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
-            (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
-        });
-        upperThumbnailImgTwo.classList.add("opacity-70");
-        upperThumbnailImages.forEach((e) => {
-            e.classList.add("rounded-xl");
-        });
-        upperThumbnailImgTwo.classList.remove("rounded-xl");
-        (_a = upperThumbnailImgTwo.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
-        (_b = upperThumbnailImgTwo.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
-        (_c = upperThumbnailImgTwo.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
+        imgSetupTwo();
     });
     upperThumbnailImgThree.addEventListener("click", () => {
-        var _a, _b, _c;
         thumbnaimNum = 3;
-        upperMainImg.setAttribute("src", "images/image-product-3.jpg");
-        upperThumbnailImages.forEach((e) => {
-            var _a, _b, _c;
-            e.classList.remove("opacity-70");
-            (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
-            (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
-            (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
-        });
-        upperThumbnailImgThree.classList.add("opacity-70");
-        upperThumbnailImages.forEach((e) => {
-            e.classList.add("rounded-xl");
-        });
-        upperThumbnailImgThree.classList.remove("rounded-xl");
-        (_a = upperThumbnailImgThree.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
-        (_b = upperThumbnailImgThree.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
-        (_c = upperThumbnailImgThree.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
+        imgSetupThree();
     });
     upperThumbnailImgFour.addEventListener("click", () => {
-        var _a, _b, _c;
         thumbnaimNum = 4;
-        upperMainImg.setAttribute("src", "images/image-product-4.jpg");
-        upperThumbnailImages.forEach((e) => {
-            var _a, _b, _c;
-            e.classList.remove("opacity-70");
-            (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
-            (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
-            (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
-        });
-        upperThumbnailImgFour.classList.add("opacity-70");
-        upperThumbnailImages.forEach((e) => {
-            e.classList.add("rounded-xl");
-        });
-        upperThumbnailImgFour.classList.remove("rounded-xl");
-        (_a = upperThumbnailImgFour.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
-        (_b = upperThumbnailImgFour.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
-        (_c = upperThumbnailImgFour.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
+        imgSetupFour();
     });
 });
 nextPic.addEventListener('mouseover', () => {
@@ -168,6 +104,38 @@ closeDiv.addEventListener('mouseover', () => {
 });
 closeDiv.addEventListener('mouseout', () => {
     closeColor.setAttribute('fill', '#1D2026');
+});
+nextPic.addEventListener('click', () => {
+    thumbnaimNum++;
+    thumbnaimNum = thumbnaimNum > 4 ? 1 : thumbnaimNum;
+    if (thumbnaimNum === 1) {
+        imgSetupOne();
+    }
+    else if (thumbnaimNum === 2) {
+        imgSetupTwo();
+    }
+    else if (thumbnaimNum === 3) {
+        imgSetupThree();
+    }
+    else if (thumbnaimNum === 4) {
+        imgSetupFour();
+    }
+});
+prevPic.addEventListener('click', () => {
+    thumbnaimNum--;
+    thumbnaimNum = thumbnaimNum < 1 ? 4 : thumbnaimNum;
+    if (thumbnaimNum === 1) {
+        imgSetupOne();
+    }
+    else if (thumbnaimNum === 2) {
+        imgSetupTwo();
+    }
+    else if (thumbnaimNum === 3) {
+        imgSetupThree();
+    }
+    else if (thumbnaimNum === 4) {
+        imgSetupFour();
+    }
 });
 plus.addEventListener('click', () => {
     totalAmount++;
@@ -278,4 +246,80 @@ function thumbNailUpdate(thumbOrder) {
         (_l = thumbnailImgFour.parentElement) === null || _l === void 0 ? void 0 : _l.classList.add("border-4");
         (_m = thumbnailImgFour.parentElement) === null || _m === void 0 ? void 0 : _m.classList.add("border-orange");
     }
+}
+function imgSetupOne() {
+    var _a, _b, _c;
+    upperMainImg.setAttribute("src", "images/image-product-1.jpg");
+    upperThumbnailImages.forEach((e) => {
+        var _a, _b, _c;
+        e.classList.remove("opacity-70");
+        (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
+        (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
+        (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
+    });
+    upperThumbnailImgOne.classList.add("opacity-70");
+    upperThumbnailImages.forEach((e) => {
+        e.classList.add("rounded-xl");
+    });
+    upperThumbnailImgOne.classList.remove("rounded-xl");
+    (_a = upperThumbnailImgOne.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
+    (_b = upperThumbnailImgOne.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
+    (_c = upperThumbnailImgOne.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
+}
+function imgSetupTwo() {
+    var _a, _b, _c;
+    upperMainImg.setAttribute("src", "images/image-product-2.jpg");
+    upperThumbnailImages.forEach((e) => {
+        var _a, _b, _c;
+        e.classList.remove("opacity-70");
+        (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
+        (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
+        (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
+    });
+    upperThumbnailImgTwo.classList.add("opacity-70");
+    upperThumbnailImages.forEach((e) => {
+        e.classList.add("rounded-xl");
+    });
+    upperThumbnailImgTwo.classList.remove("rounded-xl");
+    (_a = upperThumbnailImgTwo.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
+    (_b = upperThumbnailImgTwo.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
+    (_c = upperThumbnailImgTwo.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
+}
+function imgSetupThree() {
+    var _a, _b, _c;
+    upperMainImg.setAttribute("src", "images/image-product-3.jpg");
+    upperThumbnailImages.forEach((e) => {
+        var _a, _b, _c;
+        e.classList.remove("opacity-70");
+        (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
+        (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
+        (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
+    });
+    upperThumbnailImgThree.classList.add("opacity-70");
+    upperThumbnailImages.forEach((e) => {
+        e.classList.add("rounded-xl");
+    });
+    upperThumbnailImgThree.classList.remove("rounded-xl");
+    (_a = upperThumbnailImgThree.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
+    (_b = upperThumbnailImgThree.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
+    (_c = upperThumbnailImgThree.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
+}
+function imgSetupFour() {
+    var _a, _b, _c;
+    upperMainImg.setAttribute("src", "images/image-product-4.jpg");
+    upperThumbnailImages.forEach((e) => {
+        var _a, _b, _c;
+        e.classList.remove("opacity-70");
+        (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
+        (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
+        (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
+    });
+    upperThumbnailImgFour.classList.add("opacity-70");
+    upperThumbnailImages.forEach((e) => {
+        e.classList.add("rounded-xl");
+    });
+    upperThumbnailImgFour.classList.remove("rounded-xl");
+    (_a = upperThumbnailImgFour.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
+    (_b = upperThumbnailImgFour.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
+    (_c = upperThumbnailImgFour.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
 }
