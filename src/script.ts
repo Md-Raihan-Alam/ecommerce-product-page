@@ -203,9 +203,13 @@ cartMenu();
 function thumbNailUpdate(thumbOrder:number){
     thumbnailImges.forEach((e)=>{
         e.classList.remove("opacity-50");
+        e.classList.remove('rounded-xl');
         e.parentElement?.classList.remove("rounded-xl");
         e.parentElement?.classList.remove("border-4");
         e.parentElement?.classList.remove("border-orange");
+    });
+    thumbnailImges.forEach((e)=>{
+        e.classList.add("rounded-xl");
     });
     if(thumbOrder===1){
         thumbnailImgOne.classList.add("opacity-50");
@@ -232,7 +236,4 @@ function thumbNailUpdate(thumbOrder:number){
         thumbnailImgFour.parentElement?.classList.add("border-4");
         thumbnailImgFour.parentElement?.classList.add("border-orange");
     }
-    thumbnailImges.forEach((e)=>{
-        e.classList.add("rounded-xl");
-    });
 }

@@ -218,9 +218,13 @@ function thumbNailUpdate(thumbOrder) {
     thumbnailImges.forEach((e) => {
         var _a, _b, _c;
         e.classList.remove("opacity-50");
+        e.classList.remove('rounded-xl');
         (_a = e.parentElement) === null || _a === void 0 ? void 0 : _a.classList.remove("rounded-xl");
         (_b = e.parentElement) === null || _b === void 0 ? void 0 : _b.classList.remove("border-4");
         (_c = e.parentElement) === null || _c === void 0 ? void 0 : _c.classList.remove("border-orange");
+    });
+    thumbnailImges.forEach((e) => {
+        e.classList.add("rounded-xl");
     });
     if (thumbOrder === 1) {
         thumbnailImgOne.classList.add("opacity-50");
@@ -250,7 +254,4 @@ function thumbNailUpdate(thumbOrder) {
         (_l = thumbnailImgFour.parentElement) === null || _l === void 0 ? void 0 : _l.classList.add("border-4");
         (_m = thumbnailImgFour.parentElement) === null || _m === void 0 ? void 0 : _m.classList.add("border-orange");
     }
-    thumbnailImges.forEach((e) => {
-        e.classList.add("rounded-xl");
-    });
 }
