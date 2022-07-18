@@ -57,13 +57,13 @@ shopIcon.addEventListener('click', () => {
 thumbnailImges.forEach((e) => {
     e.addEventListener("click", () => {
         transparentBlack.classList.remove('hidden');
-        coverImg.classList.remove("hidden");
+        coverImg.classList.remove("tablet:hidden");
         coverImg.classList.add('flex');
         coverImg.classList.add('flex-col');
     });
     closeMark.addEventListener('click', (e) => {
         transparentBlack.classList.add('hidden');
-        coverImg.classList.add('hidden');
+        coverImg.classList.add('tablet:hidden');
         coverImg.classList.remove('flex');
         coverImg.classList.remove('flex-col');
         let currentPic = upperMainImg.getAttribute('src');
