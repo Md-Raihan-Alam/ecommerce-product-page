@@ -35,6 +35,7 @@ module.exports = {
         sideCenter:"32%",
         center:"46%",
         bgRound:"40px",
+        start:"155px",
       },
       borderColor:{
         'orange':"hsl(26, 100%, 55%)",
@@ -51,7 +52,7 @@ module.exports = {
       },
       fontSize:{
         '9px':'9px',
-        'small':'14px',
+        'small':'12px',
         'normal':'17px',
       },
       margin:{
