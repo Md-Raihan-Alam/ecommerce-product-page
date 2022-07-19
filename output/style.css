@@ -662,6 +662,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-fitBorder {
   width: 85%;
 }
+.w-10\/12 {
+  width: 83.333333%;
+}
 .flex-1 {
   flex: 1 1 0%;
 }
