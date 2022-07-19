@@ -3,11 +3,13 @@ let barMenu = document.querySelector('#barMenu');
 let closeMenu = document.querySelector("#closeMenu");
 let asideMenu = document.querySelector("#asideMenu");
 let transparentBlack = document.querySelector("#transparentBlack");
+let transparentBlackFlag = 0;
 let optionText = document.querySelectorAll('#optionSpan');
 let shopIcon = document.querySelector("#shopIcon");
 let shopCart = document.querySelector('#shoppingCart');
 let mainImg = document.querySelector("#mainImg");
 let upperMainImg = document.querySelector("#uppermainImg");
+let mediaUpperMainImg = document.querySelector("#mediaUpperMainImg");
 let thumbnailImgOne = document.querySelector("#thumbnailImg1");
 let thumbnailImgTwo = document.querySelector("#thumbnailImg2");
 let thumbnailImgThree = document.querySelector("#thumbnailImg3");
@@ -22,10 +24,14 @@ let closeMark = document.querySelector("#closeImage");
 let closeDiv = document.querySelector('#closeDiv');
 let closeColor = document.querySelector("#closeColor");
 let nextPic = document.querySelector('#nextPic');
+let mediaNextPic = document.querySelector("#mediaNextPic");
 let prevPic = document.querySelector('#prevPic');
+let mediaPrevPic = document.querySelector("#mediaPrevPic");
 let nextColor = document.querySelector("#nextColor");
+let mediaNextColor = document.querySelector("#mediaNextColor");
 let prevColor = document.querySelector("#prevColor");
-let thumbnaimNum = 0;
+let mediaPrevColor = document.querySelector("#mediaPrevColor");
+let thumbnaimNum = 1;
 let minus = document.querySelector('#decreaseAmount');
 let plus = document.querySelector('#increaseAmount');
 let amount = document.querySelector('#itemAmount');
@@ -37,10 +43,21 @@ let cartMenuDiv = document.querySelector('#cartMenu');
 let coverImg = document.querySelector('#coverImage');
 barMenu.addEventListener("click", () => {
     transparentBlack.classList.remove('hidden');
+    transparentBlack.classList.remove('invisible');
+    transparentBlack.classList.add('fixed');
     asideMenu.classList.remove("-translate-x-full");
 });
 closeMenu.addEventListener("click", () => {
-    transparentBlack.classList.add('hidden');
+    if (transparentBlackFlag === 0) {
+        transparentBlack.classList.add('hidden');
+        transparentBlack.classList.remove('invisible');
+        transparentBlack.classList.remove('fixed');
+    }
+    else {
+        transparentBlack.classList.add('fixed');
+        transparentBlack.classList.remove('hidden');
+        transparentBlack.classList.add('invisible');
+    }
     asideMenu.classList.add("-translate-x-full");
 });
 optionText.forEach((e) => {
@@ -56,48 +73,72 @@ shopIcon.addEventListener('click', () => {
 });
 thumbnailImges.forEach((e) => {
     e.addEventListener("click", () => {
+        transparentBlackFlag = 1;
         transparentBlack.classList.remove('hidden');
-        coverImg.classList.remove("tablet:hidden");
+        transparentBlack.classList.add('fixed');
+        coverImg.classList.remove("hidden");
         coverImg.classList.add('flex');
         coverImg.classList.add('flex-col');
     });
     closeMark.addEventListener('click', (e) => {
+        transparentBlackFlag = 0;
         transparentBlack.classList.add('hidden');
-        coverImg.classList.add('tablet:hidden');
+        coverImg.classList.add('hidden');
         coverImg.classList.remove('flex');
         coverImg.classList.remove('flex-col');
         let currentPic = upperMainImg.getAttribute('src');
         mainImg.setAttribute('src', `${currentPic}`);
+        mediaUpperMainImg.setAttribute('src', `${currentPic}`);
         thumbNailUpdate(thumbnaimNum);
     });
     upperThumbnailImgOne.addEventListener("click", () => {
         thumbnaimNum = 1;
         imgSetupOne();
+        let currentPic = upperMainImg.getAttribute('src');
+        mediaUpperMainImg.setAttribute('src', `${currentPic}`);
     });
     upperThumbnailImgTwo.addEventListener("click", () => {
         thumbnaimNum = 2;
         imgSetupTwo();
+        let currentPic = upperMainImg.getAttribute('src');
+        mediaUpperMainImg.setAttribute('src', `${currentPic}`);
     });
     upperThumbnailImgThree.addEventListener("click", () => {
         thumbnaimNum = 3;
         imgSetupThree();
+        let currentPic = upperMainImg.getAttribute('src');
+        mediaUpperMainImg.setAttribute('src', `${currentPic}`);
     });
     upperThumbnailImgFour.addEventListener("click", () => {
         thumbnaimNum = 4;
         imgSetupFour();
+        let currentPic = upperMainImg.getAttribute('src');
+        mediaUpperMainImg.setAttribute('src', `${currentPic}`);
     });
 });
 nextPic.addEventListener('mouseover', () => {
     nextColor.setAttribute('stroke', 'hsl(26, 100%, 55%)');
 });
+mediaNextPic.addEventListener('mouseover', () => {
+    mediaNextColor.setAttribute('stroke', 'hsl(26, 100%, 55%)');
+});
 nextPic.addEventListener('mouseout', () => {
     nextColor.setAttribute('stroke', '#1D2026');
+});
+mediaNextPic.addEventListener('mouseout', () => {
+    mediaNextColor.setAttribute('stroke', '#1D2026');
 });
 prevPic.addEventListener('mouseover', () => {
     prevColor.setAttribute('stroke', 'hsl(26, 100%, 55%)');
 });
+mediaPrevPic.addEventListener('mouseover', () => {
+    mediaPrevColor.setAttribute('stroke', 'hsl(26, 100%, 55%)');
+});
 prevPic.addEventListener('mouseout', () => {
     prevColor.setAttribute('stroke', '#1D2026');
+});
+mediaPrevPic.addEventListener('mouseout', () => {
+    mediaPrevColor.setAttribute('stroke', '#1D2026');
 });
 closeDiv.addEventListener('mouseover', () => {
     closeColor.setAttribute('fill', 'hsl(26, 100%, 55%)');
@@ -105,38 +146,10 @@ closeDiv.addEventListener('mouseover', () => {
 closeDiv.addEventListener('mouseout', () => {
     closeColor.setAttribute('fill', '#1D2026');
 });
-nextPic.addEventListener('click', () => {
-    thumbnaimNum++;
-    thumbnaimNum = thumbnaimNum > 4 ? 1 : thumbnaimNum;
-    if (thumbnaimNum === 1) {
-        imgSetupOne();
-    }
-    else if (thumbnaimNum === 2) {
-        imgSetupTwo();
-    }
-    else if (thumbnaimNum === 3) {
-        imgSetupThree();
-    }
-    else if (thumbnaimNum === 4) {
-        imgSetupFour();
-    }
-});
-prevPic.addEventListener('click', () => {
-    thumbnaimNum--;
-    thumbnaimNum = thumbnaimNum < 1 ? 4 : thumbnaimNum;
-    if (thumbnaimNum === 1) {
-        imgSetupOne();
-    }
-    else if (thumbnaimNum === 2) {
-        imgSetupTwo();
-    }
-    else if (thumbnaimNum === 3) {
-        imgSetupThree();
-    }
-    else if (thumbnaimNum === 4) {
-        imgSetupFour();
-    }
-});
+nextPic.addEventListener('click', imgThumbUpdateInc);
+mediaNextPic.addEventListener('click', mediaImgThumbUpdateInc);
+prevPic.addEventListener('click', imgThumbUpdateDec);
+mediaPrevPic.addEventListener('click', mediaImgThumbUpdateDec);
 plus.addEventListener('click', () => {
     totalAmount++;
     amountUpdate(totalAmount);
@@ -322,4 +335,50 @@ function imgSetupFour() {
     (_a = upperThumbnailImgFour.parentElement) === null || _a === void 0 ? void 0 : _a.classList.add("rounded-xl");
     (_b = upperThumbnailImgFour.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
     (_c = upperThumbnailImgFour.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
+}
+function imgThumbUpdateInc() {
+    thumbnaimNum++;
+    thumbnaimNum = thumbnaimNum > 4 ? 1 : thumbnaimNum;
+    if (thumbnaimNum === 1) {
+        imgSetupOne();
+    }
+    else if (thumbnaimNum === 2) {
+        imgSetupTwo();
+    }
+    else if (thumbnaimNum === 3) {
+        imgSetupThree();
+    }
+    else if (thumbnaimNum === 4) {
+        imgSetupFour();
+    }
+}
+function mediaImgThumbUpdateInc() {
+    imgThumbUpdateInc();
+    let currentPic = upperMainImg.getAttribute('src');
+    mainImg.setAttribute('src', `${currentPic}`);
+    mediaUpperMainImg.setAttribute('src', `${currentPic}`);
+    thumbNailUpdate(thumbnaimNum);
+}
+function imgThumbUpdateDec() {
+    thumbnaimNum--;
+    thumbnaimNum = thumbnaimNum < 1 ? 4 : thumbnaimNum;
+    if (thumbnaimNum === 1) {
+        imgSetupOne();
+    }
+    else if (thumbnaimNum === 2) {
+        imgSetupTwo();
+    }
+    else if (thumbnaimNum === 3) {
+        imgSetupThree();
+    }
+    else if (thumbnaimNum === 4) {
+        imgSetupFour();
+    }
+}
+function mediaImgThumbUpdateDec() {
+    imgThumbUpdateDec();
+    let currentPic = upperMainImg.getAttribute('src');
+    mainImg.setAttribute('src', `${currentPic}`);
+    mediaUpperMainImg.setAttribute('src', `${currentPic}`);
+    thumbNailUpdate(thumbnaimNum);
 }

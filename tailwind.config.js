@@ -36,6 +36,7 @@ module.exports = {
         center:"46%",
         bgRound:"40px",
         start:"155px",
+        cartWidth:"300px",
       },
       borderColor:{
         'orange':"hsl(26, 100%, 55%)",

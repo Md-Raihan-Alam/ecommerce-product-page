@@ -25,7 +25,7 @@
   <div class="flex-initial w-twenty h-16 flex justify-end items-center">
     <div class="relative">
       <div id="cardAmount" class="absolute bottom-3 text-center text-white text-9px left-2 w-5 h-3 rounded-md bg-orange">0</div>
-      <div  id="shoppingCart" class="absolute hidden top-14 tablet:-right-14 -right-14 w-80 shadow-xl  rounded-md bg-white">
+      <div  id="shoppingCart" class="absolute hidden top-14 z-30 -translate-x-3/4 tablet:-right-14 w-cartWidth tablet:w-80 shadow-xl  rounded-md bg-white">
         <div class="w-full h-14 pl-3 flex justify-start items-center font-bold border-gray-400 border-b-1">Cart</div>
         <div id="cartMenu" class="w-full h-36 flex flex-col justify-center items-center text-dark-grayish-blue">
         </div>
@@ -35,21 +35,33 @@
     <img src="images/image-avatar.png" class="hover:border-orange rounded-full border-2 mr-4 w-[50px] h-[50px] cursor-pointer " alt="Avatar"/>
   </div>
 </header>
+<!--media upper image-->
+<div id="mediaCoverImage" class="block tablet:hidden">
+  <div class="w-full h-upperPer flex flex-col items-center relative">
+    <div id="mediaNextPic" class="absolute cursor-pointer w-bgRound h-bgRound flex rounded-full justify-center items-center bg-white top-center right-5">
+      <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path id="mediaNextColor" d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+    </div>
+    <img class="w-full h-upperHeight" id="mediaUpperMainImg" src="images/image-product-1.jpg"/>
+    <div id="mediaPrevPic" class="absolute cursor-pointer w-bgRound h-bgRound  flex rounded-full justify-center items-center bg-white bottom-center left-5">
+      <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path id="mediaPrevColor" d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+    </div>
+  </div>
+</div>
 <!--upper image-->
-<div id="coverImage" class="tablet:absolute tablet:z-30 tablet:hidden tablet:top-28 tablet:left-0 tablet:right-0 tablet:bottom-0">
+<div id="coverImage" class="absolute z-30 invisible tablet:visible hidden top-28 left-0 right-0 bottom-0">
   <div class="w-full h-upperPer flex  flex-col items-center relative">
-    <div id="closeDiv" class="w-1/3 hidden tablet:flex justify-end">
+    <div id="closeDiv" class="w-1/3 flex justify-end">
       <svg width="16" height="18" id="closeImage" class="cursor-pointer" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#1D2026" id="closeColor" fill-rule="evenodd"/></svg>
     </div>
-    <div id="nextPic" class="absolute cursor-pointer w-bgRound h-bgRound flex rounded-full justify-center items-center bg-white top-center right-5 tablet:right-sideCenter">
+    <div id="nextPic" class="absolute cursor-pointer w-bgRound h-bgRound flex rounded-full justify-center items-center bg-white top-center right-sideCenter">
       <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg"><path id="nextColor" d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
     </div>
     <img class="w-full tablet:w-1/3 h-upperHeight tablet:rounded-xl" id="uppermainImg" src="images/image-product-1.jpg"/>
-    <div id="prevPic" class="absolute cursor-pointer w-bgRound h-bgRound  flex rounded-full justify-center items-center bg-white bottom-center left-5 tablet:left-sideCenter">
+    <div id="prevPic" class="absolute cursor-pointer w-bgRound h-bgRound  flex rounded-full justify-center items-center bg-white bottom-center left-sideCenter">
       <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg"><path id="prevColor" d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
     </div>
   </div>
-  <div class="w-full hidden tablet:flex mt-5 justify-center">
+  <div class="w-full flex mt-5 justify-center">
     <div class="flex justify-between items-center w-1/3">
       <div class="border-orange border-4 rounded-xl mr-2">
         <img id="upperthumbnailImg1" class="upperThumb mr-3 hover:opacity-70 w-full h-thumbailHeight cursor-pointer opacity-70" src="images/image-product-1-thumbnail.jpg"/>
@@ -67,8 +79,8 @@
   </div>
 </div>
 <!--background tranparency-->
-<div id="transparentBlack" class="z-20 w-full h-fullView hidden bg-halfBlack absolute top-0 left-0 bottom-0 right-0"></div>
-<aside class="absolute z-30 left-0 right-0 top-0 bottom-0 h-fullView bg-white w-4/5 -translate-x-full transition-transform" id="asideMenu">
+<div id="transparentBlack" class="z-20 w-full h-full invisible tablet:visible hidden bg-halfBlack top-0 left-0 bottom-0 right-0"></div>
+<aside class="fixed z-30 left-0 right-0 top-0 bottom-0 h-full bg-white w-4/5 -translate-x-full transition-transform" id="asideMenu">
   <div class="h-16 flex justify-start items-center">
     <svg width="14" height="15" class="ml-6 hover:cursor-pointer" id="closeMenu" xmlns="http://www.w3.org/2000/svg"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill="#69707D" fill-rule="evenodd"/></svg>
   </div>
@@ -80,62 +92,62 @@
     <div class="text-black mb-2 font-black ml-6 hover:cursor-pointer">Contact</div>
   </div>
 </aside>
-  <div class="flex mt-12">
-    <div class="w-1/2 hidden tablet:flex flex-col justify-center items-center">
-      <div class="w-full hidden tablet:flex justify-center">
-        <img class="w-1/2 h-fourH rounded-xl" id="mainImg" src="images/image-product-1.jpg"/>
-      </div>
-      <div class="w-full mt-6 flex justify-center">
-        <div class="flex justify-between items-center w-1/2">
-          <!--outline and border-->
-          <div class="w-thumbnail h-full border-orange border-4 rounded-xl">
-            <img id="thumbnailImg1" class="thumb hover:opacity-50 w-full h-thumbailHeight cursor-pointer opacity-50" src="images/image-product-1-thumbnail.jpg"/>
-          </div>
-          <div class="w-thumbnail h-full">
-            <img id="thumbnailImg2" class="thumb  hover:opacity-50 w-full h-thumbailHeight rounded-xl cursor-pointer" src="images/image-product-2-thumbnail.jpg"/>
-          </div>
-          <div class="w-thumbnail h-full">
-            <img id="thumbnailImg3" class="thumb  hover:opacity-50 w-full h-thumbailHeight rounded-xl cursor-pointer" src="images/image-product-3-thumbnail.jpg"/>
-          </div>
-          <div class="w-thumbnail h-full">
-            <img id="thumbnailImg4" class="thumb  hover:opacity-50 w-full h-thumbailHeight rounded-xl cursor-pointer" src="images/image-product-4-thumbnail.jpg"/>
-          </div>
-        </div>
-      </div>
+<div class="flex mt-12">
+  <div class="w-1/2 hidden tablet:flex flex-col justify-center items-center">
+    <div class="w-full hidden tablet:flex justify-center">
+      <img class="w-1/2 h-fourH rounded-xl" id="mainImg" src="images/image-product-1.jpg"/>
     </div>
-    <div class="w-full tablet:w-1/2">
-      <div class="w-full h-10 ml-10 tablet:ml-0 flex items-end text-guide-orange font-bold">
-        SNEAKER COMPANY
-      </div>
-      <div class="mt-5 w-ninety ml-10 tablet:ml-0 h-auto flex justify-start text-justify text-4xl tablet:text-6xl font-bold">
-        Fall Limited Edition Sneakers
-      </div>
-      <div class="mt-res w-ninety ml-10 pr-5 tablet:ml-0 tablet:pr-5 h-auto flex justify-center tablet:justify-start text-justify text-dark-grayish-blue">
-        These low-profile sneakers are your perfect casula wear companion. Featuring a durable rubber outer sole, they'll withstand
-        everything the weather can offer
-      </div>
-      <div class="mt-res ml-10 tablet:ml-0 w-ninety h-auto flex justify-between tablet:justify-start ">
-       <div class="flex font-bold text-3xl">
-        <div>$125.00</div>
-        <div class="ml-4 text-small w-8 h-7 relative top-1 flex justify-center items-center bg-guide-pale-orange"><span class="text-guide-orange">
-          50%
-        </span></div>        
-       </div>
-       <div class="relative w-10 mr-10"><del class="absolute top-1 tablet:top-9 left-0 tablet:-left-start text-grayish-blue">$250.00</del></div>
-      </div>
-      <div class="mt-res w-ninety h-auto flex flex-col tablet:flex-row">
-        <div class="flex bg-light-grayish-blue px-3 w-full tablet:w-32 mx-6 tablet:mx-0 h-10 justify-between items-center">
-          <svg width="12" id="decreaseAmount" class="cursor-pointer" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use fill="hsl(26, 100%, 55%)" fill-rule="nonzero" xlink:href="#a"/></svg>
-          <span id="itemAmount"></span>
-          <svg width="12" id="increaseAmount" class="cursor-pointer" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></defs><use fill="hsl(26, 100%, 55%)" fill-rule="nonzero" xlink:href="#b"/></svg>
+    <div class="w-full mt-6 flex justify-center">
+      <div class="flex justify-between items-center w-1/2">
+        <!--outline and border-->
+        <div class="w-thumbnail h-full border-orange border-4 rounded-xl">
+          <img id="thumbnailImg1" class="thumb hover:opacity-50 w-full h-thumbailHeight cursor-pointer opacity-50" src="images/image-product-1-thumbnail.jpg"/>
         </div>
-        <div id="addToCart" class="ml-7 mb-4 mt-3 tablet:mt-0 cursor-pointer w-full tablet:w-64 rounded-lg h-11 flex justify-center items-center bg-orange">
-          <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="hsl(0, 0%, 100%)" fill-rule="nonzero"/></svg>
-          <div class="text-white ml-2 text-normal font-bold">Add to cart</div>
+        <div class="w-thumbnail h-full">
+          <img id="thumbnailImg2" class="thumb  hover:opacity-50 w-full h-thumbailHeight rounded-xl cursor-pointer" src="images/image-product-2-thumbnail.jpg"/>
+        </div>
+        <div class="w-thumbnail h-full">
+          <img id="thumbnailImg3" class="thumb  hover:opacity-50 w-full h-thumbailHeight rounded-xl cursor-pointer" src="images/image-product-3-thumbnail.jpg"/>
+        </div>
+        <div class="w-thumbnail h-full">
+          <img id="thumbnailImg4" class="thumb  hover:opacity-50 w-full h-thumbailHeight rounded-xl cursor-pointer" src="images/image-product-4-thumbnail.jpg"/>
         </div>
       </div>
     </div>
   </div>
+  <div class="w-full tablet:w-1/2">
+    <div class="w-ninety h-10 ml-10 tablet:ml-0 flex items-end text-guide-orange font-bold">
+      SNEAKER COMPANY
+    </div>
+    <div class="mt-5 w-ninety ml-10 tablet:ml-0 h-auto flex justify-start text-justify text-4xl tablet:text-6xl font-bold">
+      Fall Limited Edition Sneakers
+    </div>
+    <div class="mt-res w-ninety ml-10 pr-5 tablet:ml-0 tablet:pr-5 h-auto flex justify-center tablet:justify-start text-justify text-dark-grayish-blue">
+      These low-profile sneakers are your perfect casula wear companion. Featuring a durable rubber outer sole, they'll withstand
+      everything the weather can offer
+    </div>
+    <div class="mt-res ml-10 tablet:ml-0 w-ninety h-auto flex justify-between tablet:justify-start ">
+     <div class="flex font-bold text-3xl">
+      <div>$125.00</div>
+      <div class="ml-4 text-small w-8 h-7 relative top-1 flex justify-center items-center bg-guide-pale-orange"><span class="text-guide-orange">
+        50%
+      </span></div>        
+     </div>
+     <div class="relative w-10 mr-10"><del class="absolute top-1 tablet:top-9 left-0 tablet:-left-start text-grayish-blue">$250.00</del></div>
+    </div>
+    <div class="mt-res w-ninety h-auto flex flex-col tablet:flex-row">
+      <div class="flex bg-light-grayish-blue px-3 w-full tablet:w-32 mx-6 tablet:mx-0 h-10 justify-between items-center">
+        <svg width="12" id="decreaseAmount" class="cursor-pointer" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z" id="a"/></defs><use fill="hsl(26, 100%, 55%)" fill-rule="nonzero" xlink:href="#a"/></svg>
+        <span id="itemAmount"></span>
+        <svg width="12" id="increaseAmount" class="cursor-pointer" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z" id="b"/></defs><use fill="hsl(26, 100%, 55%)" fill-rule="nonzero" xlink:href="#b"/></svg>
+      </div>
+      <div id="addToCart" class="ml-7 mb-4 mt-3 tablet:mt-0 cursor-pointer w-full tablet:w-64 rounded-lg h-11 flex justify-center items-center bg-orange">
+        <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="hsl(0, 0%, 100%)" fill-rule="nonzero"/></svg>
+        <div class="text-white ml-2 text-normal font-bold">Add to cart</div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 <script src="./output/script.js"></script>
 </html>
