@@ -34,7 +34,7 @@ I also had time working with thumbnail update which might not be close to the im
 ```<br/>
 for parent div->w-thumbnail h-full border-orange border-4 rounded-xl<br/>
 for image->thumb hover:opacity-50 w-full h-thumbailHeight cursor-pointer opacity-50<br/>
-```
+```<br/>
 Check the tages below "outline and border" comment section in html file to have full idea and for typescript check under "thumbnail images sections" comment section.
 
 ## Author
