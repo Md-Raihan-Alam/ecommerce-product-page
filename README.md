@@ -31,9 +31,9 @@ z-20 w-full h-full invisible tablet:visible hidden bg-halfBlack top-0 left-0 bot
 ```
 <br/>
 I also had time working with thumbnail update which might not be close to the image as much as possible. This is the classes I used from tailwind and I updated with typscript.<br/>
-```
-for parent div->w-thumbnail h-full border-orange border-4 rounded-xl
-for image->thumb hover:opacity-50 w-full h-thumbailHeight cursor-pointer opacity-50
+```<br/>
+for parent div->w-thumbnail h-full border-orange border-4 rounded-xl<br/>
+for image->thumb hover:opacity-50 w-full h-thumbailHeight cursor-pointer opacity-50<br/>
 ```
 Check the tages below "outline and border" comment section in html file to have full idea and for typescript check under "thumbnail images sections" comment section.
 
