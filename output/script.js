@@ -1,4 +1,5 @@
 "use strict";
+//all variables
 let barMenu = document.querySelector('#barMenu');
 let closeMenu = document.querySelector("#closeMenu");
 let asideMenu = document.querySelector("#asideMenu");
@@ -41,6 +42,7 @@ let addToCart = document.querySelector('#addToCart');
 let finalAmount = 0;
 let cartMenuDiv = document.querySelector('#cartMenu');
 let coverImg = document.querySelector('#coverImage');
+//menu options
 barMenu.addEventListener("click", () => {
     transparentBlack.classList.remove('hidden');
     transparentBlack.classList.remove('invisible');
@@ -48,6 +50,7 @@ barMenu.addEventListener("click", () => {
     asideMenu.classList.remove("-translate-x-full");
 });
 closeMenu.addEventListener("click", () => {
+    //transparentBlack options depending on whether upper image is active or not
     if (transparentBlackFlag === 0) {
         transparentBlack.classList.add('hidden');
         transparentBlack.classList.remove('invisible');
@@ -60,6 +63,7 @@ closeMenu.addEventListener("click", () => {
     }
     asideMenu.classList.add("-translate-x-full");
 });
+//menu border bottom line section
 optionText.forEach((e) => {
     e.addEventListener('mouseover', () => {
         e.parentElement.classList.add('hover:border-orange');
@@ -68,11 +72,14 @@ optionText.forEach((e) => {
         e.parentElement.classList.remove('hover:border-orange');
     });
 });
+//shop cart menu appearence
 shopIcon.addEventListener('click', () => {
     shopCart.classList.toggle('hidden');
 });
+//thumbnail images sections
 thumbnailImges.forEach((e) => {
     e.addEventListener("click", () => {
+        //flag whether the upper image is active in case the website goes into media query
         transparentBlackFlag = 1;
         transparentBlack.classList.remove('hidden');
         transparentBlack.classList.add('fixed');
@@ -80,6 +87,7 @@ thumbnailImges.forEach((e) => {
         coverImg.classList.add('flex');
         coverImg.classList.add('flex-col');
     });
+    //close upper image
     closeMark.addEventListener('click', (e) => {
         transparentBlackFlag = 0;
         transparentBlack.classList.add('hidden');
@@ -91,6 +99,7 @@ thumbnailImges.forEach((e) => {
         mediaUpperMainImg.setAttribute('src', `${currentPic}`);
         thumbNailUpdate(thumbnaimNum);
     });
+    //thumbnail work
     upperThumbnailImgOne.addEventListener("click", () => {
         thumbnaimNum = 1;
         imgSetupOne();
@@ -116,6 +125,7 @@ thumbnailImges.forEach((e) => {
         mediaUpperMainImg.setAttribute('src', `${currentPic}`);
     });
 });
+//prev and next and close colors
 nextPic.addEventListener('mouseover', () => {
     nextColor.setAttribute('stroke', 'hsl(26, 100%, 55%)');
 });
@@ -146,10 +156,12 @@ closeDiv.addEventListener('mouseover', () => {
 closeDiv.addEventListener('mouseout', () => {
     closeColor.setAttribute('fill', '#1D2026');
 });
+//prev and next pic update
 nextPic.addEventListener('click', imgThumbUpdateInc);
 mediaNextPic.addEventListener('click', mediaImgThumbUpdateInc);
 prevPic.addEventListener('click', imgThumbUpdateDec);
 mediaPrevPic.addEventListener('click', mediaImgThumbUpdateDec);
+//item amound increase and decrease 
 plus.addEventListener('click', () => {
     totalAmount++;
     amountUpdate(totalAmount);
@@ -158,11 +170,14 @@ minus.addEventListener('click', () => {
     totalAmount--;
     amountUpdate(totalAmount);
 });
+//adding to cart
 addToCart.addEventListener('click', () => {
     cartAmountUpdate(totalAmount);
     totalAmount = 0;
     amountUpdate(totalAmount);
 });
+//functions
+//send amound and other data to cart menu
 //better way to use instead of innerHTML
 function amountUpdate(number) {
     totalAmount = number;
@@ -174,6 +189,7 @@ function amountUpdate(number) {
     amount.appendChild(document.createTextNode(`${totalAmount}`));
 }
 amountUpdate(totalAmount);
+//amount design update
 function cartAmountUpdate(total = 0) {
     finalAmount = total;
     //instead of innerText
@@ -188,6 +204,7 @@ function cartAmountUpdate(total = 0) {
     }
     cartMenu(finalAmount);
 }
+//cart menu update for empty or have items
 cartAmountUpdate();
 function cartMenu(totalItem = 0) {
     var _a;
@@ -218,6 +235,7 @@ function cartMenu(totalItem = 0) {
     }
 }
 cartMenu();
+//thumbnailUpdates
 function thumbNailUpdate(thumbOrder) {
     var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m;
     thumbnailImges.forEach((e) => {
@@ -260,6 +278,7 @@ function thumbNailUpdate(thumbOrder) {
         (_m = thumbnailImgFour.parentElement) === null || _m === void 0 ? void 0 : _m.classList.add("border-orange");
     }
 }
+//image setup for pic and thumbnail one
 function imgSetupOne() {
     var _a, _b, _c;
     upperMainImg.setAttribute("src", "images/image-product-1.jpg");
@@ -279,6 +298,7 @@ function imgSetupOne() {
     (_b = upperThumbnailImgOne.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
     (_c = upperThumbnailImgOne.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
 }
+// image setup for pic two and thumbail two
 function imgSetupTwo() {
     var _a, _b, _c;
     upperMainImg.setAttribute("src", "images/image-product-2.jpg");
@@ -298,6 +318,7 @@ function imgSetupTwo() {
     (_b = upperThumbnailImgTwo.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
     (_c = upperThumbnailImgTwo.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
 }
+// image setup for pic three and thumbail three
 function imgSetupThree() {
     var _a, _b, _c;
     upperMainImg.setAttribute("src", "images/image-product-3.jpg");
@@ -317,6 +338,7 @@ function imgSetupThree() {
     (_b = upperThumbnailImgThree.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
     (_c = upperThumbnailImgThree.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
 }
+// image setup for pic four and thumbail four
 function imgSetupFour() {
     var _a, _b, _c;
     upperMainImg.setAttribute("src", "images/image-product-4.jpg");
@@ -336,6 +358,7 @@ function imgSetupFour() {
     (_b = upperThumbnailImgFour.parentElement) === null || _b === void 0 ? void 0 : _b.classList.add("border-4");
     (_c = upperThumbnailImgFour.parentElement) === null || _c === void 0 ? void 0 : _c.classList.add("border-orange");
 }
+//image next pic update 
 function imgThumbUpdateInc() {
     thumbnaimNum++;
     thumbnaimNum = thumbnaimNum > 4 ? 1 : thumbnaimNum;
@@ -352,6 +375,7 @@ function imgThumbUpdateInc() {
         imgSetupFour();
     }
 }
+//image next pic update for media image show section
 function mediaImgThumbUpdateInc() {
     imgThumbUpdateInc();
     let currentPic = upperMainImg.getAttribute('src');
@@ -359,6 +383,7 @@ function mediaImgThumbUpdateInc() {
     mediaUpperMainImg.setAttribute('src', `${currentPic}`);
     thumbNailUpdate(thumbnaimNum);
 }
+//image prev pic update
 function imgThumbUpdateDec() {
     thumbnaimNum--;
     thumbnaimNum = thumbnaimNum < 1 ? 4 : thumbnaimNum;
@@ -375,6 +400,7 @@ function imgThumbUpdateDec() {
         imgSetupFour();
     }
 }
+//image prev pic update for media image show section
 function mediaImgThumbUpdateDec() {
     imgThumbUpdateDec();
     let currentPic = upperMainImg.getAttribute('src');

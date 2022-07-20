@@ -1,3 +1,4 @@
+//all variables
 let barMenu=document.querySelector('#barMenu') as HTMLOrSVGScriptElement;
 let closeMenu=document.querySelector("#closeMenu") as HTMLOrSVGScriptElement;
 let asideMenu=document.querySelector("#asideMenu") as HTMLElement;
@@ -40,6 +41,7 @@ let addToCart=document.querySelector('#addToCart') as HTMLDivElement;
 let finalAmount:number=0;
 let cartMenuDiv=document.querySelector('#cartMenu') as HTMLDivElement;
 let coverImg=document.querySelector('#coverImage') as HTMLDivElement;
+//menu options
 barMenu.addEventListener("click",()=>{
     transparentBlack.classList.remove('hidden');
     transparentBlack.classList.remove('invisible');
@@ -47,6 +49,7 @@ barMenu.addEventListener("click",()=>{
     asideMenu.classList.remove("-translate-x-full");
 });
 closeMenu.addEventListener("click",()=>{
+    //transparentBlack options depending on whether upper image is active or not
     if(transparentBlackFlag===0)
     {
         transparentBlack.classList.add('hidden');
@@ -60,6 +63,7 @@ closeMenu.addEventListener("click",()=>{
     } 
     asideMenu.classList.add("-translate-x-full");
 });
+//menu border bottom line section
 optionText.forEach((e)=>{
     e.addEventListener('mouseover',()=>{
         e.parentElement!.classList.add('hover:border-orange');
@@ -68,11 +72,14 @@ optionText.forEach((e)=>{
         e.parentElement!.classList.remove('hover:border-orange');
     });
 });
+//shop cart menu appearence
 shopIcon.addEventListener('click',()=>{
     shopCart.classList.toggle('hidden');
 });
+//thumbnail images sections
 thumbnailImges.forEach((e)=>{
     e.addEventListener("click",()=>{
+        //flag whether the upper image is active in case the website goes into media query
         transparentBlackFlag=1;
         transparentBlack.classList.remove('hidden');
         transparentBlack.classList.add('fixed');
@@ -80,6 +87,7 @@ thumbnailImges.forEach((e)=>{
         coverImg.classList.add('flex');
         coverImg.classList.add('flex-col');
     });
+    //close upper image
     closeMark.addEventListener('click',(e)=>{
         transparentBlackFlag=0;
         transparentBlack.classList.add('hidden');
@@ -91,6 +99,7 @@ thumbnailImges.forEach((e)=>{
         mediaUpperMainImg.setAttribute('src',`${currentPic}`);
         thumbNailUpdate(thumbnaimNum);
     });
+    //thumbnail work
     upperThumbnailImgOne.addEventListener("click",()=>{
         thumbnaimNum=1;
         imgSetupOne();
@@ -116,6 +125,7 @@ thumbnailImges.forEach((e)=>{
         mediaUpperMainImg.setAttribute('src',`${currentPic}`);
     });
 });
+//prev and next and close colors
 nextPic.addEventListener('mouseover',()=>{
     nextColor.setAttribute('stroke','hsl(26, 100%, 55%)');
 });
@@ -146,10 +156,12 @@ closeDiv.addEventListener('mouseover',()=>{
 closeDiv.addEventListener('mouseout',()=>{
     closeColor.setAttribute('fill','#1D2026');
 });
+//prev and next pic update
 nextPic.addEventListener('click',imgThumbUpdateInc);
 mediaNextPic.addEventListener('click',mediaImgThumbUpdateInc);
 prevPic.addEventListener('click',imgThumbUpdateDec);
 mediaPrevPic.addEventListener('click',mediaImgThumbUpdateDec);
+//item amound increase and decrease 
 plus.addEventListener('click',()=>{
     totalAmount++;
     amountUpdate(totalAmount);
@@ -158,11 +170,14 @@ minus.addEventListener('click',()=>{
     totalAmount--;
     amountUpdate(totalAmount)
 });
+//adding to cart
 addToCart.addEventListener('click',()=>{
     cartAmountUpdate(totalAmount);
     totalAmount=0;
     amountUpdate(totalAmount);
 });
+//functions
+//send amound and other data to cart menu
 //better way to use instead of innerHTML
 function amountUpdate(number:number){
     totalAmount=number;
@@ -173,6 +188,7 @@ function amountUpdate(number:number){
     amount.appendChild(document.createTextNode(`${totalAmount}`));
 }
 amountUpdate(totalAmount);
+//amount design update
 function cartAmountUpdate(total:number=0){
     finalAmount=total;
     //instead of innerText
@@ -186,6 +202,7 @@ function cartAmountUpdate(total:number=0){
     }
     cartMenu(finalAmount);
 }
+//cart menu update for empty or have items
 cartAmountUpdate();
 function cartMenu(totalItem:number=0){
     let itemAmount:number=totalItem;
@@ -214,6 +231,7 @@ function cartMenu(totalItem:number=0){
     }
 }
 cartMenu();
+//thumbnailUpdates
 function thumbNailUpdate(thumbOrder:number){
     thumbnailImges.forEach((e)=>{
         e.classList.remove("opacity-50");
@@ -251,6 +269,7 @@ function thumbNailUpdate(thumbOrder:number){
         thumbnailImgFour.parentElement?.classList.add("border-orange");
     }
 }
+//image setup for pic and thumbnail one
 function imgSetupOne()
 {
     upperMainImg.setAttribute("src","images/image-product-1.jpg");
@@ -269,6 +288,7 @@ function imgSetupOne()
         upperThumbnailImgOne.parentElement?.classList.add("border-4");
         upperThumbnailImgOne.parentElement?.classList.add("border-orange");
 }
+// image setup for pic two and thumbail two
 function imgSetupTwo(){
     upperMainImg.setAttribute("src","images/image-product-2.jpg");
         upperThumbnailImages.forEach((e)=>{
@@ -286,6 +306,7 @@ function imgSetupTwo(){
         upperThumbnailImgTwo.parentElement?.classList.add("border-4");
         upperThumbnailImgTwo.parentElement?.classList.add("border-orange");
 }
+// image setup for pic three and thumbail three
 function imgSetupThree(){
     upperMainImg.setAttribute("src","images/image-product-3.jpg");
     upperThumbnailImages.forEach((e)=>{
@@ -303,6 +324,7 @@ function imgSetupThree(){
     upperThumbnailImgThree.parentElement?.classList.add("border-4");
     upperThumbnailImgThree.parentElement?.classList.add("border-orange");
 }
+// image setup for pic four and thumbail four
 function imgSetupFour(){
     upperMainImg.setAttribute("src","images/image-product-4.jpg");
     upperThumbnailImages.forEach((e)=>{
@@ -320,6 +342,7 @@ function imgSetupFour(){
     upperThumbnailImgFour.parentElement?.classList.add("border-4");
     upperThumbnailImgFour.parentElement?.classList.add("border-orange");
 }
+//image next pic update 
 function imgThumbUpdateInc()
 {
     thumbnaimNum++;
@@ -334,6 +357,7 @@ function imgThumbUpdateInc()
         imgSetupFour();
     }
 }
+//image next pic update for media image show section
 function mediaImgThumbUpdateInc(){
     imgThumbUpdateInc();
     let currentPic=upperMainImg.getAttribute('src');
@@ -341,6 +365,7 @@ function mediaImgThumbUpdateInc(){
     mediaUpperMainImg.setAttribute('src',`${currentPic}`);
     thumbNailUpdate(thumbnaimNum);
 }
+//image prev pic update
 function imgThumbUpdateDec()
 {
     thumbnaimNum--;
@@ -355,6 +380,7 @@ function imgThumbUpdateDec()
         imgSetupFour();
     }
 }
+//image prev pic update for media image show section
 function mediaImgThumbUpdateDec(){
     imgThumbUpdateDec();
     let currentPic=upperMainImg.getAttribute('src');
